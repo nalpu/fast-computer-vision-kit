@@ -75,4 +75,21 @@ public void drawBoundingBox(BoundingBox bb, int stroke_color, float stroke_weigh
   noFill();
   stroke(stroke_color); 
   strokeWeight(stroke_weight);
-  rect(bb.xMin(), bb.yMin(), bb.xSize
+  rect(bb.xMin(), bb.yMin(), bb.xSize(), bb.ySize());
+}
+
+
+
+
+
+// draw contour
+public void drawContour(ArrayList<Pixel> pixel_list, int stroke_color, int fill_color, boolean fill, float stroke_weight) {
+  if ( !fill)
+    noFill();
+  else
+    fill(fill_color);
+  stroke(stroke_color);
+  strokeWeight(stroke_weight);
+  beginShape();
+  for (int idx = 0; idx < pixel_list.size(); idx++) {
+    Pixel p
