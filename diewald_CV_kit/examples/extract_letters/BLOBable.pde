@@ -31,4 +31,15 @@ public final class BLOBable_Letters implements BLOBable{
     mousey_val_ = PApplet.map(papplet_.mouseY, 0, papplet_.height, 1, 98);
     if( mousex_val_ > 99 ) mousex_val_ = 99;
     if( mousex_val_ < 1 )  mousex_val_ = 1;
-//    println("MY NAME IS: " +this.getClass
+//    println("MY NAME IS: " +this.getClass().getSimpleName());
+  }
+  //@Override
+  public final boolean isBLOBable(int pixel_index, int x, int y) {
+    
+    hsb_ = PixelColor.rgb2hsb(img_.pixels[pixel_index], hsb_);
+    float hue = hsb_[0];
+    float sat = hsb_[1];
+    float bri = hsb_[2];
+//  if ( (hue > 0 ) && ( sat > mousex_val) || (bri > mousey_val))
+    if ( bri < mousex_val_  ){
+//    if ( (hue < 20 || hue > 300) && ( 
