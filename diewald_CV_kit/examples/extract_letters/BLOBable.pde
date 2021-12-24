@@ -42,4 +42,10 @@ public final class BLOBable_Letters implements BLOBable{
     float bri = hsb_[2];
 //  if ( (hue > 0 ) && ( sat > mousex_val) || (bri > mousey_val))
     if ( bri < mousex_val_  ){
-//    if ( (hue < 20 || hue > 300) && ( 
+//    if ( (hue < 20 || hue > 300) && ( sat > 50) && (bri > 50))
+      return true;
+    } else {
+      return false;
+    }
+  }
+}
