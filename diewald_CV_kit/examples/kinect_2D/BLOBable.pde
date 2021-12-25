@@ -13,4 +13,20 @@ public final class BLOBable_Kinect_2D implements BLOBable{
     papplet_ = papplet;
   }
   
-  public BLOBab
+  public BLOBable_Kinect_2D setKinectDepth(KinectFrameDepth kinect_depth){
+    kinect_depth_ = kinect_depth;
+    return this;
+  }
+  
+
+  
+  //@Override
+  public final void init() {
+    name_ = this.getClass().getSimpleName(); 
+  }
+  
+  //@Override
+  public final void updateOnFrame( int width, int height) {
+    width_ = width;
+    height_ = height;
+//    println("MY NAME 
