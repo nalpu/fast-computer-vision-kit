@@ -29,4 +29,16 @@ public final class BLOBable_Kinect_2D implements BLOBable{
   public final void updateOnFrame( int width, int height) {
     width_ = width;
     height_ = height;
-//    println("MY NAME 
+//    println("MY NAME IS: " +this.getClass().getSimpleName()); 
+    kinect_depth_values = kinect_depth_.getRawDepth();
+
+  }
+  
+  //@Override
+  public final boolean isBLOBable(int pixel_index, int x, int y) {
+    
+    float depth = kinect_depth_values[pixel_index];
+    if ( depth > 650 && depth < 800 ) {
+      
+//    float hue = PixelColor.hue(kinect_depth_values[pixel_index]);
+//   
