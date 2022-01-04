@@ -41,4 +41,10 @@ public final class BLOBable_Kinect_2D implements BLOBable{
     if ( depth > 650 && depth < 800 ) {
       
 //    float hue = PixelColor.hue(kinect_depth_values[pixel_index]);
-//   
+//    if ( hue > 200 && hue < 300 ) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+}
