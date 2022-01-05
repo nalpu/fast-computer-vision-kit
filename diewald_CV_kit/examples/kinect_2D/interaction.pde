@@ -26,4 +26,6 @@ public void keyPressed() {
 
 public void keyReleased() {
   if ( key == 'b') draw_blobs_boundingsbox = !draw_blobs_boundingsbox;
-  if ( key == 'f') draw_filled_blobs       
+  if ( key == 'f') draw_filled_blobs       = !draw_filled_blobs;
+}
+
