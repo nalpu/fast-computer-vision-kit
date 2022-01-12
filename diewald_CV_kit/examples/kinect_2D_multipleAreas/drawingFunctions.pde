@@ -64,3 +64,23 @@ public void drawConvexHullPoints(ConvexHullDiwi convex_hull, int stroke_color, f
   for (int cvh_idx = 0; cvh_idx < convex_hull_list.size(); cvh_idx++, convex_hull_list.gotoNext() ) {
     Pixel p = convex_hull_list.getCurrentNode().get();
     point(p.x_, p.y_);
+  }
+}
+
+
+
+
+// draw boundingsbox
+public void drawBoundingBox(BoundingBox bb, int stroke_color, float stroke_weight) {
+  noFill();
+  stroke(stroke_color); 
+  strokeWeight(stroke_weight);
+  rect(bb.xMin(), bb.yMin(), bb.xSize(), bb.ySize());
+}
+
+
+
+
+
+// draw contour
+public void drawContour(ArrayList<Pixel> pixel_list, int stroke_color, int fill_color, boo
