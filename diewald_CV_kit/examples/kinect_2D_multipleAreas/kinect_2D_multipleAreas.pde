@@ -26,4 +26,18 @@ import diewald_CV_kit.libraryinfo.*;
 import diewald_CV_kit.utility.*;
 import diewald_CV_kit.blobdetection.*;
 
-import dLibs.
+import dLibs.freenect.*;
+import dLibs.freenect.constants.*;
+import dLibs.freenect.interfaces.*;
+
+
+PFont font;
+
+//-------------------------------------------------------------------
+// kinect
+Kinect kinect_;                     
+KinectFrameVideo kinect_video_;     
+KinectFrameDepth kinect_depth_;     
+KinectTilt kinect_tilt_;
+
+// get width/height --> actual
