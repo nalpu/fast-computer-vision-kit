@@ -40,4 +40,14 @@ KinectFrameVideo kinect_video_;
 KinectFrameDepth kinect_depth_;     
 KinectTilt kinect_tilt_;
 
-// get width/height --> actual
+// get width/height --> actually its always 640 x 480
+int size_x = VIDEO_FORMAT._RGB_.getWidth(); 
+int size_y = VIDEO_FORMAT._RGB_.getHeight(); 
+PImage video_frame_, depth_frame_;  // images
+
+//-------------------------------------------------------------------
+// blob detection 
+BlobDetector blob_detector;
+BoundingBox detection_area;
+int detection_resolution = 1;
+boolean draw_b
