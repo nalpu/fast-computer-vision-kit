@@ -50,4 +50,16 @@ PImage video_frame_, depth_frame_;  // images
 BlobDetector blob_detector;
 BoundingBox detection_area;
 int detection_resolution = 1;
-boolean draw_b
+boolean draw_blobs_boundingsbox  = true;
+boolean draw_filled_blobs        = true;
+
+public void setup() {
+
+  size(size_x, size_y*2);
+
+
+  //--------------------------------------------------------------------------
+  // KINECT STUFF - initialization
+  kinect_ = new Kinect(0);  //create a main kinect instance with index 0
+
+    kinect_video_ = new KinectFrameVideo(VIDEO_FORMAT._RGB_  );      // create 
