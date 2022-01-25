@@ -62,4 +62,12 @@ public void setup() {
   // KINECT STUFF - initialization
   kinect_ = new Kinect(0);  //create a main kinect instance with index 0
 
-    kinect_video_ = new KinectFrameVideo(VIDEO_FORMAT._RGB_  );      // create 
+    kinect_video_ = new KinectFrameVideo(VIDEO_FORMAT._RGB_  );      // create a video instance, RGB
+  kinect_depth_ = new KinectFrameDepth(DEPTH_FORMAT._11BIT_);      // create a depth instance
+  kinect_tilt_  = new KinectTilt();                                // create a Tilt instance
+
+  kinect_video_.setFrameRate(30);
+  kinect_depth_.setFrameRate(30);
+
+
+  kinect_video_.connect(kinect_);  // con
