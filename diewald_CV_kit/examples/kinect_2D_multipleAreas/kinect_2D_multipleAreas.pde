@@ -70,4 +70,11 @@ public void setup() {
   kinect_depth_.setFrameRate(30);
 
 
-  kinect_video_.connect(kinect_);  // con
+  kinect_video_.connect(kinect_);  // connect the created video instance to the main kinect
+  kinect_depth_.connect(kinect_);  // connect the created depth instance to the main kinect
+  kinect_tilt_ .connect(kinect_);  // connect Tilt to Kinect
+
+  kinect_tilt_.setTiltDegrees(10);  // set tilt degrees
+
+  // create a PImage for video/depth
+  video_frame_
