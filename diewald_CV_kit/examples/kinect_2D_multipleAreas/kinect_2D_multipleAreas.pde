@@ -92,4 +92,22 @@ public void setup() {
   blob_detector.setBLOBable(new BLOBable_Kinect_2D(this).setKinectDepth(kinect_depth_));
 
   detection_area = new BoundingBox(0, 0, size_x, size_y);
-  blob_detector.setDetectingArea(detec
+  blob_detector.setDetectingArea(detection_area);
+
+  //--------------------------------------------------------------------------
+  //  FONT, FRAMERATE, ...
+  font = createFont("Calibri", 14);
+  textFont(font);
+  frameRate(200);
+}
+
+
+
+
+public void draw() {
+  assignPixels( video_frame_, kinect_video_);
+  assignPixels( depth_frame_, kinect_depth_);
+
+
+  image(depth_frame_, 0, 0);
+  image
