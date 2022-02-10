@@ -77,4 +77,11 @@ public void setup() {
   kinect_tilt_.setTiltDegrees(10);  // set tilt degrees
 
   // create a PImage for video/depth
-  video_frame_
+  video_frame_ = createImage(VIDEO_FORMAT._RGB_  .getWidth(), VIDEO_FORMAT._RGB_     .getHeight(), RGB);
+  depth_frame_ = createImage(DEPTH_FORMAT._11BIT_.getWidth(), DEPTH_FORMAT._11BIT_   .getHeight(), RGB);
+
+
+  //--------------------------------------------------------------------------
+  // BLOB DETECTION STUFF - initialization
+  blob_detector = new BlobDetector(size_x, size_y);
+  blob_det
