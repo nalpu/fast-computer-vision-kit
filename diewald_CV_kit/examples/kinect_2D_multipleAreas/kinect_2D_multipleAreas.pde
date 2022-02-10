@@ -84,4 +84,12 @@ public void setup() {
   //--------------------------------------------------------------------------
   // BLOB DETECTION STUFF - initialization
   blob_detector = new BlobDetector(size_x, size_y);
-  blob_det
+  blob_detector.setResolution(detection_resolution);
+  blob_detector.computeContours(true);
+  blob_detector.computeBlobPixels(!true);
+  blob_detector.setMinMaxPixels(10*10, size_x*size_y);
+
+  blob_detector.setBLOBable(new BLOBable_Kinect_2D(this).setKinectDepth(kinect_depth_));
+
+  detection_area = new BoundingBox(0, 0, size_x, size_y);
+  blob_detector.setDetectingArea(detec
