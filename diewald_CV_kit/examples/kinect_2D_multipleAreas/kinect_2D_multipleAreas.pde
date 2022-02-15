@@ -141,3 +141,13 @@ public void detectionInArea(int x_min, int y_min, int x_max, int y_max) {
 
 
   ArrayList<Blob> blob_list = blob_detector.getBlobs();
+
+  for (int blob_idx = 0; blob_idx < blob_list.size(); blob_idx++ ) {
+    Blob blob = blob_list.get(blob_idx);
+    ArrayList<Contour> contour_list = blob.getContours();
+    for (int contour_idx = 0; contour_idx < contour_list.size(); contour_idx++ ) {
+      Contour contour = contour_list.get(contour_idx);
+      BoundingBox bb = contour.getBoundingBox();
+
+      // draw the outer contours
+   
