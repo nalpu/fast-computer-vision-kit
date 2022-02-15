@@ -110,4 +110,24 @@ public void draw() {
 
 
   image(depth_frame_, 0, 0);
-  image
+  image(video_frame_, 0, size_y);
+
+
+
+  // set resolution - improves speed a lot
+  blob_detector.setResolution(detection_resolution);
+
+
+
+  detectionInArea( 50, 100, 250, 300);
+  detectionInArea(350, 100, 550, 300);
+
+  // simple information about framerate, and number of detected blobs
+  fill(0, 200); 
+  noStroke();
+  rect(0, 0, 150, 50);
+  printlnFPS();
+}
+
+
+public void detectionInArea(int x_m
