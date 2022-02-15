@@ -130,4 +130,14 @@ public void draw() {
 }
 
 
-public void detectionInArea(int x_m
+public void detectionInArea(int x_min, int y_min, int x_max, int y_max) {
+  detection_area.set(x_min, y_min, x_max, y_max);
+  // draw the detection-area
+  stroke(0, 0, 0);
+  strokeWeight(1);
+  noFill();
+  rect(detection_area.xMin(), detection_area.yMin(), detection_area.xSize()-1, detection_area.ySize()-1);    
+  blob_detector.update();
+
+
+  ArrayList<Blob> blob_list = blob_detector.getBlobs();
