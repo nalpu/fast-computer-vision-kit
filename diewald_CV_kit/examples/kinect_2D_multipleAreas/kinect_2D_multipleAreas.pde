@@ -150,4 +150,15 @@ public void detectionInArea(int x_min, int y_min, int x_max, int y_max) {
       BoundingBox bb = contour.getBoundingBox();
 
       // draw the outer contours
-   
+      if ( contour_idx == 0) {
+
+        if ( draw_blobs_boundingsbox ) {
+          drawBoundingBox(bb, color(0), 2);
+          fill(0);
+          text("blob["+blob_idx+"]", bb.xMin(), bb.yMin()- textDescent()*2);
+        }
+
+        drawContour(contour.getPixels(), color(255), color(0, 150), draw_filled_blobs, 2);
+      } 
+      else {
+        // draw the
