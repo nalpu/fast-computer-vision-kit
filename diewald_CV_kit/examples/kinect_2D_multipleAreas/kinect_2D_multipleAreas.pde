@@ -161,4 +161,18 @@ public void detectionInArea(int x_min, int y_min, int x_max, int y_max) {
         drawContour(contour.getPixels(), color(255), color(0, 150), draw_filled_blobs, 2);
       } 
       else {
-        // draw the
+        // draw the inner contours, if they have more than 20 vertices
+        //          if( contour.getPixels().size() > 20){
+        //            drawContour(contour.getPixels(), color(255, 150,0), color(0, 100), false, 1);
+        //          }
+      }
+    }
+  }
+}
+
+
+
+
+
+//-------------------------------------------------------------------
+public void assignPixels(PImage img, Pixelable kin
