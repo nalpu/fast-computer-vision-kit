@@ -175,4 +175,18 @@ public void detectionInArea(int x_min, int y_min, int x_max, int y_max) {
 
 
 //-------------------------------------------------------------------
-public void assignPixels(PImage img, Pixelable kin
+public void assignPixels(PImage img, Pixelable kinect_dev) {
+  img.loadPixels();
+  img.pixels = kinect_dev.getPixels();  // assign pixels of the kinect device to the image
+  img.updatePixels();
+}
+
+
+//-------------------------------------------------------------------
+//this is maybe not necessary, but is the proper way to close everything
+public void dispose() {
+  Kinect.shutDown(); 
+  super.dispose();
+}
+
+
