@@ -48,4 +48,17 @@ public void drawDetectionBox() {
 
   KinectPoint3D kp3d_001 = k3d_.getTransformedPixel(x_min, y_min, z_max);
   KinectPoint3D kp3d_101 = k3d_.getTransformedPixel(x_max, y_min, z_max);
-  KinectPoint3D kp3d_111 = k3d_.getTransformedPixel(x_max
+  KinectPoint3D kp3d_111 = k3d_.getTransformedPixel(x_max, y_max, z_max);
+  KinectPoint3D kp3d_011 = k3d_.getTransformedPixel(x_min, y_max, z_max);
+
+  stroke(0); 
+  strokeWeight(1);
+  noFill();
+
+  //    //front
+  //    fill(255, 0, 0, 100);
+  //    beginShape();
+  //      vertex(kp3d_000.x, kp3d_000.y, kp3d_000.z);
+  //      vertex(kp3d_100.x, kp3d_100.y, kp3d_100.z);
+  //      vertex(kp3d_110.x, kp3d_110.y, kp3d_110.z);
+  // 
