@@ -121,4 +121,19 @@ public void drawDetectionBox() {
 }
 
 
-public void drawBoundingBox3d(float x_min, float y_min, float z_min, fl
+public void drawBoundingBox3d(float x_min, float y_min, float z_min, float x_max, float y_max, float z_max) {
+  stroke(255, 125, 0); 
+  strokeWeight(2); 
+  noFill();
+  beginShape();
+  vertex(x_min, y_min, z_min);
+  vertex(x_max, y_min, z_min);
+  vertex(x_max, y_max, z_min);
+  vertex(x_min, y_max, z_min);
+  vertex(x_min, y_min, z_min);
+  endShape();
+
+  beginShape();
+  vertex(x_min, y_min, z_max);
+  vertex(x_max, y_min, z_max);
+  vertex(x
