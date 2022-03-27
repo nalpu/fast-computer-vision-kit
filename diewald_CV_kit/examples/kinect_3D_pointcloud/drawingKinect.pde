@@ -109,3 +109,16 @@ public void drawDetectionBox() {
   vertex(kp3d_000.x, kp3d_000.y, kp3d_000.z);
   endShape();
 
+  //right
+  //    fill(0, 0, 255, 50);
+  beginShape();
+  vertex(kp3d_100.x, kp3d_100.y, kp3d_100.z);
+  vertex(kp3d_101.x, kp3d_101.y, kp3d_101.z);
+  vertex(kp3d_111.x, kp3d_111.y, kp3d_111.z);
+  vertex(kp3d_110.x, kp3d_110.y, kp3d_110.z);
+  vertex(kp3d_100.x, kp3d_100.y, kp3d_100.z);
+  endShape();
+}
+
+
+public void drawBoundingBox3d(float x_min, float y_min, float z_min, fl
