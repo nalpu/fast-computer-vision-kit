@@ -136,4 +136,25 @@ public void drawBoundingBox3d(float x_min, float y_min, float z_min, float x_max
   beginShape();
   vertex(x_min, y_min, z_max);
   vertex(x_max, y_min, z_max);
-  vertex(x
+  vertex(x_max, y_max, z_max);
+  vertex(x_min, y_max, z_max);
+  vertex(x_min, y_min, z_max);
+  endShape();
+
+  line(x_min, y_min, z_min, 
+  x_min, y_min, z_max);
+
+  line(x_max, y_min, z_min, 
+  x_max, y_min, z_max);
+
+  line(x_max, y_max, z_min, 
+  x_max, y_max, z_max);
+
+  line(x_min, y_max, z_min, 
+  x_min, y_max, z_max);
+}
+
+
+public void drawWKS(float size) {
+  strokeWeight(3);
+  strok
