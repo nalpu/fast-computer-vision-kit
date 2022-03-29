@@ -16,4 +16,15 @@
 // only a defined area is tracked, defined by a far/near clipping plane, 
 // and a cutted camera-cone.
 // the tracked blobs outer contours are drawn into the 3d-sene, 
-// and projected onto the z-pl
+// and projected onto the z-plane (rotated by 90 degrees).
+//
+// -------------------------------------------------------
+// interaction:
+//
+// dragged mouse - drag a rectangle to define the detection area
+//
+// key 'UP'   - lower resolution
+// key 'DOWN' - higher resolution
+// key 'c'    - print camera orientation settings
+//
+//----------------------------------------
