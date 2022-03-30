@@ -58,3 +58,17 @@ int size_x = VIDEO_FORMAT._RGB_.getWidth();
 int size_y = VIDEO_FORMAT._RGB_.getHeight(); 
 
 
+//-------------------------------------------------------------------
+// blob detection 
+BlobDetector blob_detector;
+BLOBable_Kinect_3D blobsable_kinect3d;
+BoundingBox detection_area;
+int detection_resolution = 1;
+
+
+float clipping_depth = 15;
+float clipping_near = 50;
+float clipping_far  = clipping_near + clipping_depth;
+float clipping_animstep = .1f;
+
+//------------------------------
