@@ -45,3 +45,16 @@ import peasy.*; // peasycam
 
 
 PFont font;
+
+//-------------------------------------------------------------------
+// kinect
+Kinect kinect_;                     
+Kinect3D k3d_;   
+KinectFrameDepth kinect_depth_;     
+KinectTilt kinect_tilt_;
+
+// get width/height --> actually its always 640 x 480
+int size_x = VIDEO_FORMAT._RGB_.getWidth(); 
+int size_y = VIDEO_FORMAT._RGB_.getHeight(); 
+
+
