@@ -71,4 +71,16 @@ float clipping_near = 50;
 float clipping_far  = clipping_near + clipping_depth;
 float clipping_animstep = .1f;
 
-//------------------------------
+//-------------------------------------------------------------------
+// PeasyCam
+PeasyCam cam;   
+
+int scale_screen = 2;
+public void setup() {
+
+  size(size_x*scale_screen, size_y*scale_screen, OPENGL);
+
+  //--------------------------------------------------------------------------
+  // KINECT STUFF - initialization
+  kinect_ = new Kinect(0);  //create a main kinect instance with index 0
+  kinec
