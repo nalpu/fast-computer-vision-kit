@@ -27,4 +27,21 @@
 // key 'DOWN' - higher resolution
 // key 'c'    - print camera orientation settings
 //
-//----------------------------------------
+//---------------------------------------------------------
+import java.util.Locale;
+import diewald_CV_kit.libraryinfo.*;
+import diewald_CV_kit.utility.*;
+import diewald_CV_kit.blobdetection.*;
+
+import dLibs.freenect.*;
+import dLibs.freenect.constants.*;
+import dLibs.freenect.interfaces.*;
+import dLibs.freenect.toolbox.*;
+
+
+import processing.opengl.*;
+import peasy.*; // peasycam
+
+
+
+PFont font;
