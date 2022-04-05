@@ -91,4 +91,14 @@ public void setup() {
 
   kinect_depth_.connect(kinect_);  //connect the created depth instance to the main kinect
   k3d_.connect(kinect_);
-  kinect_t
+  kinect_tilt_.connect(kinect_);
+
+  kinect_tilt_.setTiltDegrees(13);
+  initPeasyCam();
+
+  //--------------------------------------------------------------------------
+  // BLOB DETECTION STUFF - initialization
+  blob_detector = new BlobDetector(size_x, size_y);
+  blob_detector.setResolution(detection_resolution);
+  blob_detector.computeContours(true);
+  blob_d
