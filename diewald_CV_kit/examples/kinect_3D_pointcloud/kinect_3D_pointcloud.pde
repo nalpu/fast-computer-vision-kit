@@ -83,4 +83,12 @@ public void setup() {
   //--------------------------------------------------------------------------
   // KINECT STUFF - initialization
   kinect_ = new Kinect(0);  //create a main kinect instance with index 0
-  kinec
+  kinect_depth_ = new KinectFrameDepth(DEPTH_FORMAT._11BIT_);  // create a depth instance
+  kinect_tilt_  = new KinectTilt();  
+
+  k3d_ = new Kinect3D(); // generate a 3d instance
+  k3d_.setFrameRate(30); // set framerate
+
+  kinect_depth_.connect(kinect_);  //connect the created depth instance to the main kinect
+  k3d_.connect(kinect_);
+  kinect_t
