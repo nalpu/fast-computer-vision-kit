@@ -110,4 +110,20 @@ public void setup() {
   blob_detector.setBLOBable(blobsable_kinect3d);
 
 
-  detection_area = new BoundingBox(150, 0, siz
+  detection_area = new BoundingBox(150, 0, size_x-150, size_y);
+  blob_detector.setDetectingArea(detection_area);
+
+  //--------------------------------------------------------------------------
+  //  FONT, FRAMERATE, ...
+  font = createFont("Calibri", 14);
+  textFont(font);
+  frameRate(200);
+}
+
+
+
+
+public void draw() {
+
+  clipping_near += clipping_animstep;
+  if ( clipping_near > 200 || clipp
