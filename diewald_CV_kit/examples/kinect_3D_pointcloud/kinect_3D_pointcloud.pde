@@ -126,4 +126,18 @@ public void setup() {
 public void draw() {
 
   clipping_near += clipping_animstep;
-  if ( clipping_near > 200 || clipp
+  if ( clipping_near > 200 || clipping_near< 50)
+    clipping_animstep = -clipping_animstep;
+  clipping_far  = clipping_near + clipping_depth;
+  blobsable_kinect3d.setMinMaxDepth(clipping_near, clipping_far);
+
+  blobsable_kinect3d.setMinMaxDepth(200, 300);
+
+  background(255);
+  //    drawWKS(100);
+  drawPointCloud(5);
+
+  // draw the detection-area
+  stroke(0, 0, 0);
+  strokeWeight(1);
+  noFill(
