@@ -101,4 +101,13 @@ public void setup() {
   blob_detector = new BlobDetector(size_x, size_y);
   blob_detector.setResolution(detection_resolution);
   blob_detector.computeContours(true);
-  blob_d
+  blob_detector.computeBlobPixels(true);
+  blob_detector.setMinMaxPixels(30*30, size_x*size_y);
+
+  blobsable_kinect3d = new BLOBable_Kinect_3D(this);
+  blobsable_kinect3d.setKinect3d(k3d_);
+  blobsable_kinect3d.setMinMaxDepth(clipping_near, clipping_far);
+  blob_detector.setBLOBable(blobsable_kinect3d);
+
+
+  detection_area = new BoundingBox(150, 0, siz
