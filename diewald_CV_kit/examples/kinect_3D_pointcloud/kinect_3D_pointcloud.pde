@@ -157,4 +157,14 @@ public void draw() {
   float scale = 100;
   KinectPoint3D kinect_3d[] = k3d_.get3D();
   for (int blob_idx = 0; blob_idx < blob_list.size(); blob_idx++ ) {
-    Blob blob = blob_list.get(bl
+    Blob blob = blob_list.get(blob_idx);
+    Pixel[] blob_pixels = blob.getPixels();
+    stroke(125, 0, 0); 
+    strokeWeight(.1);
+
+    for ( Pixel p : blob_pixels ) {
+      int k3d_pixel_idx = p.x_ + size_x*p.y_;
+      KinectPoint3D k3d_point = kinect_3d[k3d_pixel_idx];
+      if ( blobsable_kinect3d.isBLOBable(k3d_pixel_idx, p.x_, p.y_)) {
+        float x = k3d_point.x * scale;
+        
