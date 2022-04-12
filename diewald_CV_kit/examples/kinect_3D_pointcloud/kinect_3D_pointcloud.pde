@@ -167,4 +167,17 @@ public void draw() {
       KinectPoint3D k3d_point = kinect_3d[k3d_pixel_idx];
       if ( blobsable_kinect3d.isBLOBable(k3d_pixel_idx, p.x_, p.y_)) {
         float x = k3d_point.x * scale;
-        
+        float y = k3d_point.y * scale;
+        float z = k3d_point.z * scale;
+        point(x, y, z);
+      }
+    }
+
+    // find bounding-box of detected blob ... and draw it
+    float x_min = 0, y_min = 0, z_min = 0, x_max = 0, y_max = 0, z_max = 0;
+    if ( blob_pixels.length > 0) {
+      float x = 0, y = 0, z = 0;
+      int k3d_pixel_idx;
+      KinectPoint3D k3d_point;
+
+ 
