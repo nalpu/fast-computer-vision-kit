@@ -140,4 +140,21 @@ public void draw() {
   // draw the detection-area
   stroke(0, 0, 0);
   strokeWeight(1);
-  noFill(
+  noFill();
+
+
+  drawDetectionBox();
+
+
+  // set resolution - improves speed a lot
+  blob_detector.setResolution(detection_resolution);
+
+
+  blob_detector.update();
+
+
+  ArrayList<Blob> blob_list = blob_detector.getBlobs();
+  float scale = 100;
+  KinectPoint3D kinect_3d[] = k3d_.get3D();
+  for (int blob_idx = 0; blob_idx < blob_list.size(); blob_idx++ ) {
+    Blob blob = blob_list.get(bl
