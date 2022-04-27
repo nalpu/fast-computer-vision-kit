@@ -190,3 +190,13 @@ public void draw() {
           break;
         }
       }
+
+      for ( Pixel p : blob_pixels ) {
+        k3d_pixel_idx = p.x_ + size_x*p.y_;
+        k3d_point = kinect_3d[k3d_pixel_idx];
+        if ( blobsable_kinect3d.isBLOBable(k3d_pixel_idx, p.x_, p.y_)) {
+          x = k3d_point.x * scale;
+          y = k3d_point.y * scale;
+          z = k3d_point.z * scale;
+          if ( x < x_min ) x_min = x;
+          if ( y < y_min 
