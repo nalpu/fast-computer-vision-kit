@@ -199,4 +199,17 @@ public void draw() {
           y = k3d_point.y * scale;
           z = k3d_point.z * scale;
           if ( x < x_min ) x_min = x;
-          if ( y < y_min 
+          if ( y < y_min ) y_min = y;
+          if ( z < z_min ) z_min = z;
+
+          if ( x > x_max ) x_max = x;
+          if ( y > y_max ) y_max = y;
+          if ( z > z_max ) z_max = z;
+        }
+      }
+      drawBoundingBox3d(x_min, y_min, z_min, x_max, y_max, z_max);
+    }
+
+
+    ArrayList<Contour> contour_list = blob.getContours();
+    for (int contour_idx = 0; contour_idx < 
