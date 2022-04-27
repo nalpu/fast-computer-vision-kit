@@ -212,4 +212,15 @@ public void draw() {
 
 
     ArrayList<Contour> contour_list = blob.getContours();
-    for (int contour_idx = 0; contour_idx < 
+    for (int contour_idx = 0; contour_idx < contour_list.size(); contour_idx++ ) {
+      if ( contour_idx > 0 )continue;
+      Contour contour = contour_list.get(contour_idx);
+      ArrayList<Pixel> contour_pixels =  contour.getPixels();
+
+      stroke(0, 125, 255);
+      strokeWeight(3);
+      noFill();
+
+      beginShape();
+      for ( Pixel p : contour_pixels ) {
+        int k3d_pixel_idx = p.x_ + size_x*p.y_;
