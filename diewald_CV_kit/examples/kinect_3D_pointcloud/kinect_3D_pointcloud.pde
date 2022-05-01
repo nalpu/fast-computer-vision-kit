@@ -237,4 +237,12 @@ public void draw() {
 
 
       pushMatrix();
-      rotateY
+      rotateY(HALF_PI);
+      stroke(200, 0, 0);
+      strokeWeight(1);
+      beginShape();
+      for ( Pixel p : contour_pixels ) {
+        int k3d_pixel_idx = p.x_ + size_x*p.y_;
+        KinectPoint3D k3d_point = kinect_3d[k3d_pixel_idx];
+        if ( blobsable_kinect3d.isBLOBable(k3d_pixel_idx, p.x_, p.y_)) {
+          float x = k3d_point.x * sca
