@@ -245,4 +245,18 @@ public void draw() {
         int k3d_pixel_idx = p.x_ + size_x*p.y_;
         KinectPoint3D k3d_point = kinect_3d[k3d_pixel_idx];
         if ( blobsable_kinect3d.isBLOBable(k3d_pixel_idx, p.x_, p.y_)) {
-          float x = k3d_point.x * sca
+          float x = k3d_point.x * scale;
+          float y = k3d_point.y * scale;
+          vertex(x, y, 0);
+        }
+      }
+      endShape();
+
+      stroke(0, 0, 0);
+      beginShape();
+        vertex(x_min, y_min, 0);
+        vertex(x_max, y_min, 0);
+        vertex(x_max, y_max, 0);
+        vertex(x_min, y_max, 0);
+        vertex(x_min, y_min, 0);
+      endShape
