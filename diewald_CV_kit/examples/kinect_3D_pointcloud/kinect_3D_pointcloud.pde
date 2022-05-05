@@ -259,4 +259,15 @@ public void draw() {
         vertex(x_max, y_max, 0);
         vertex(x_min, y_max, 0);
         vertex(x_min, y_min, 0);
-      endShape
+      endShape();
+
+      // draw convex hull, on z=0-plane
+      ConvexHullDiwi convex_hull = new ConvexHullDiwi();
+      convex_hull.update(contour.getPixels());
+      noFill();
+      stroke(0, 0, 255); 
+      strokeWeight(2);
+      DoubleLinkedList<Pixel> convex_hull_list = convex_hull.get();
+      convex_hull_list.gotoFirst();
+//      beginShape();
+//        for (int cvh_idx = 0; cvh_idx <
