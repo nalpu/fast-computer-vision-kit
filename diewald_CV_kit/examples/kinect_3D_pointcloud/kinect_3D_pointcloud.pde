@@ -270,4 +270,9 @@ public void draw() {
       DoubleLinkedList<Pixel> convex_hull_list = convex_hull.get();
       convex_hull_list.gotoFirst();
 //      beginShape();
-//        for (int cvh_idx = 0; cvh_idx <
+//        for (int cvh_idx = 0; cvh_idx < convex_hull_list.size()+1; cvh_idx++, convex_hull_list.gotoNext() ) {
+//          Pixel p = convex_hull_list.getCurrentNode().get();
+//          int k3d_pixel_idx = p.x_ + size_x*p.y_;
+//          KinectPoint3D k3d_point = kinect_3d[k3d_pixel_idx];
+//          if ( blobsable_kinect3d.isBLOBable(k3d_pixel_idx, p.x_, p.y_)) {
+//            float x = k3d_point.x * scale;
