@@ -34,4 +34,15 @@ public final class BLOBable_Kinect_3D implements BLOBable{
   }
   
   
-  // must-have 
+  // must-have methods, which are getting called by the blob-detector
+  //@Override
+  public final void init() {
+    name_ = this.getClass().getSimpleName(); 
+  }
+  
+  //@Override
+  public final void updateOnFrame(int width, int height) {
+    width_ = width;
+    height_ = height;
+    k3d_points_ =  k3d_.get3D();
+//    println("MY NAME IS: " +this.getClass().getSimpleNa
