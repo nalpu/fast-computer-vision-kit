@@ -17,4 +17,21 @@ public final class BLOBable_Kinect_3D implements BLOBable{
   }
   
   // customized settings
-  public final BLOB
+  public final BLOBable_Kinect_3D setKinect3d(Kinect3D k3d){
+    k3d_ = k3d;
+    return this;
+  }
+  public final BLOBable_Kinect_3D setMinMaxDepth(float min_depth, float max_depth){
+    min_depth_cm_ = min_depth;
+    max_depth_cm_ = max_depth;
+    return this;
+  }
+  public float getMinDepth(){
+    return min_depth_cm_;
+  }
+  public float getMaxDepth(){
+    return max_depth_cm_;
+  }
+  
+  
+  // must-have 
