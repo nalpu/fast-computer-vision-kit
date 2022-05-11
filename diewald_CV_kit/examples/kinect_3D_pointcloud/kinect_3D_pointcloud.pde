@@ -289,4 +289,19 @@ public void draw() {
   //    fill(0, 200); noStroke();
   //    rect(0, 0, 150, 50);
   //    printlnNumberOfBlobs(blob_detector);
-  //    pri
+  //    printlnFPS();
+  
+  //println(frameRate);
+
+}
+
+
+
+//-------------------------------------------------------------------
+//this is maybe not necessary, but is the proper way to close everything
+public void dispose() {
+  Kinect.shutDown(); 
+  super.dispose();
+}
+
+
