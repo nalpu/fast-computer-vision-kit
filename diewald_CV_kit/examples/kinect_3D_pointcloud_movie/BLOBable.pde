@@ -45,4 +45,16 @@ public final class BLOBable_Kinect_3D implements BLOBable{
     width_ = width;
     height_ = height;
     k3d_points_ =  k3d_.get3D();
-//    println("MY NAME IS: " +this.getClass().getSimpleNa
+//    println("MY NAME IS: " +this.getClass().getSimpleName());
+  }
+  
+
+  //@Override
+  public final boolean isBLOBable(int pixel_index, int x, int y) {
+    float z_value = k3d_points_[pixel_index].z * -100;
+    // depth-values within a distance of min_depth_cm_ to max_depth_cm_ are valid pixel
+    if( z_value > min_depth_cm_ && z_value < max_depth_cm_){
+      return true;
+    } else {
+      return false;
+ 
