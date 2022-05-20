@@ -57,4 +57,9 @@ public final class BLOBable_Kinect_3D implements BLOBable{
       return true;
     } else {
       return false;
- 
+    }
+  }
+  
+  
+
+}
