@@ -9,4 +9,15 @@ void initPeasyCam() {
   cam.setRotations(2.9, -0.2, 3.07); 
 
   cam.setDistance (381.16);
-  cam.setRotations(  0.
+  cam.setRotations(  0.18,    0.52,   -0.12);
+  cam.lookAt      (-44.28,   36.57, -250.13);
+}
+
+
+public void printCamSettings(PeasyCam camera) {
+  float[] la  = camera.getLookAt();
+  float[] rot = camera.getRotations();
+  float[] pos = camera.getPosition();
+  float dis   = (float)camera.getDistance();
+
+  String rotation = String.format(Locale.ENGLISH, "%7.2f, %7.2f, %7.2f ",
