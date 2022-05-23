@@ -26,4 +26,8 @@ public void printCamSettings(PeasyCam camera) {
   String distance = String.format(Locale.ENGLISH, "%7.2f ", dis);
   println("distance = "+ distance);
   println("rotation = "+ rotation);
-  println("look_at  = "
+  println("look_at  = "+ look_at);
+  println("position = "+ position);
+}
+
+
