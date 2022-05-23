@@ -20,4 +20,10 @@ public void printCamSettings(PeasyCam camera) {
   float[] pos = camera.getPosition();
   float dis   = (float)camera.getDistance();
 
-  String rotation = String.format(Locale.ENGLISH, "%7.2f, %7.2f, %7.2f ",
+  String rotation = String.format(Locale.ENGLISH, "%7.2f, %7.2f, %7.2f ", rot[0], rot[1], rot[2]);
+  String look_at  = String.format(Locale.ENGLISH, "%7.2f, %7.2f, %7.2f ", la[0], la[1], la[2]);
+  String position = String.format(Locale.ENGLISH, "%7.2f, %7.2f, %7.2f ", pos[0], pos[1], pos[2]);
+  String distance = String.format(Locale.ENGLISH, "%7.2f ", dis);
+  println("distance = "+ distance);
+  println("rotation = "+ rotation);
+  println("look_at  = "
