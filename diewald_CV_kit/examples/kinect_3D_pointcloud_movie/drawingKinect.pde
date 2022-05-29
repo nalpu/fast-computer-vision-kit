@@ -38,4 +38,10 @@ public void drawDetectionBox() {
   float y_min = detection_area.yMin();
   float z_min = blobsable_kinect3d.getMinDepth();
   float x_max = detection_area.xMax();
-  float y_max = detection_area.yMax()
+  float y_max = detection_area.yMax();
+  float z_max = blobsable_kinect3d.getMaxDepth();
+
+  KinectPoint3D kp3d_000 = k3d_.getTransformedPixel(x_min, y_min, z_min);
+  KinectPoint3D kp3d_100 = k3d_.getTransformedPixel(x_max, y_min, z_min);
+  KinectPoint3D kp3d_110 = k3d_.getTransformedPixel(x_max, y_max, z_min);
+  KinectPoint3D kp3d_010 = k3d_.getTransformedPixel(x_min, y_max, z_min);
