@@ -84,4 +84,22 @@ public void drawDetectionBox() {
   vertex(kp3d_010.x, kp3d_010.y, kp3d_010.z);
   vertex(kp3d_011.x, kp3d_011.y, kp3d_011.z);
   vertex(kp3d_111.x, kp3d_111.y, kp3d_111.z);
-  vertex(kp3d
+  vertex(kp3d_110.x, kp3d_110.y, kp3d_110.z);
+  endShape();
+
+
+  //top
+  //    fill(0, 0, 255, 50);
+  beginShape();
+  vertex(kp3d_000.x, kp3d_000.y, kp3d_000.z);
+  vertex(kp3d_100.x, kp3d_100.y, kp3d_100.z);
+  vertex(kp3d_101.x, kp3d_101.y, kp3d_101.z);
+  vertex(kp3d_001.x, kp3d_001.y, kp3d_001.z);
+  vertex(kp3d_000.x, kp3d_000.y, kp3d_000.z);
+  endShape();
+
+
+  //left
+  //    fill(0, 0, 255, 50);
+  beginShape();
+  vertex(
