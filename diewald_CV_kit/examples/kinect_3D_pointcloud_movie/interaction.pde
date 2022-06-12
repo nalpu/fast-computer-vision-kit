@@ -9,3 +9,24 @@ public void keyPressed() {
 
 public void keyReleased() {
   if ( key == 'c') printCamSettings(cam);
+  
+  if (key == 'e') {
+    if( mm != null){
+      endMovie();
+    }
+  }
+  if (key == 's') {
+    if (mm == null){
+      startMovie();
+    }
+  }
+}
+
+
+
+
+void startMovie(){
+   String movie_name = "VIDEO/diewald_CV_kit_kinect_3d_pointcloud.mov";
+   mm = new MovieMaker(this, width, height,  movie_name,
+                       20, MovieMaker.JPEG, MovieMaker.BEST);
+   println("----- STARTED 
