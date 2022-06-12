@@ -29,4 +29,13 @@ void startMovie(){
    String movie_name = "VIDEO/diewald_CV_kit_kinect_3d_pointcloud.mov";
    mm = new MovieMaker(this, width, height,  movie_name,
                        20, MovieMaker.JPEG, MovieMaker.BEST);
-   println("----- STARTED 
+   println("----- STARTED MOVIE -----" + movie_name);
+}
+
+void endMovie(){
+  mm.finish();  // Finish the movie if space bar is pressed!
+  mm = null;
+  println("----- FINISHED MOVIE -----");
+}
+
+
