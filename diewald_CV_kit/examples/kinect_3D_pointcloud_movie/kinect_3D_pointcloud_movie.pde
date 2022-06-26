@@ -195,3 +195,137 @@ public void draw() {
       for ( Pixel p : blob_pixels ) {
         k3d_pixel_idx = p.x_ + size_x*p.y_;
         k3d_point = kinect_3d[k3d_pixel_idx];
+        if ( blobsable_kinect3d.isBLOBable(k3d_pixel_idx, p.x_, p.y_)) {
+          x_min = x_max = k3d_point.x * scale;
+          y_min = y_max = k3d_point.y * scale;
+          z_min = z_max = k3d_point.z * scale;
+          break;
+        }
+      }
+
+      for ( Pixel p : blob_pixels ) {
+        k3d_pixel_idx = p.x_ + size_x*p.y_;
+        k3d_point = kinect_3d[k3d_pixel_idx];
+        if ( blobsable_kinect3d.isBLOBable(k3d_pixel_idx, p.x_, p.y_)) {
+          x = k3d_point.x * scale;
+          y = k3d_point.y * scale;
+          z = k3d_point.z * scale;
+          if ( x < x_min ) x_min = x;
+          if ( y < y_min ) y_min = y;
+          if ( z < z_min ) z_min = z;
+
+          if ( x > x_max ) x_max = x;
+          if ( y > y_max ) y_max = y;
+          if ( z > z_max ) z_max = z;
+        }
+      }
+      drawBoundingBox3d(x_min, y_min, z_min, x_max, y_max, z_max);
+    }
+
+
+    ArrayList<Contour> contour_list = blob.getContours();
+    for (int contour_idx = 0; contour_idx < contour_list.size(); contour_idx++ ) {
+      if ( contour_idx > 0 )continue;
+      Contour contour = contour_list.get(contour_idx);
+      ArrayList<Pixel> contour_pixels =  contour.getPixels();
+
+      stroke(0, 125, 255);
+      strokeWeight(3);
+      noFill();
+
+      beginShape();
+      for ( Pixel p : contour_pixels ) {
+        int k3d_pixel_idx = p.x_ + size_x*p.y_;
+        KinectPoint3D k3d_point = kinect_3d[k3d_pixel_idx];
+        if ( blobsable_kinect3d.isBLOBable(k3d_pixel_idx, p.x_, p.y_)) {
+          float x = k3d_point.x * scale;
+          float y = k3d_point.y * scale;
+          float z = k3d_point.z * scale;
+          vertex(x, y, z);
+        }
+      }
+      endShape();
+
+
+
+      pushMatrix();
+      rotateY(HALF_PI);
+      stroke(200, 0, 0);
+      strokeWeight(1);
+      beginShape();
+      for ( Pixel p : contour_pixels ) {
+        int k3d_pixel_idx = p.x_ + size_x*p.y_;
+        KinectPoint3D k3d_point = kinect_3d[k3d_pixel_idx];
+        if ( blobsable_kinect3d.isBLOBable(k3d_pixel_idx, p.x_, p.y_)) {
+          float x = k3d_point.x * scale;
+          float y = k3d_point.y * scale;
+          vertex(x, y, 0);
+        }
+      }
+      endShape();
+
+      stroke(0, 0, 0);
+      beginShape();
+        vertex(x_min, y_min, 0);
+        vertex(x_max, y_min, 0);
+        vertex(x_max, y_max, 0);
+        vertex(x_min, y_max, 0);
+        vertex(x_min, y_min, 0);
+      endShape();
+
+      // draw convex hull, on z=0-plane
+      ConvexHullDiwi convex_hull = new ConvexHullDiwi();
+      convex_hull.update(contour.getPixels());
+      noFill();
+      stroke(0, 0, 255); 
+      strokeWeight(2);
+      DoubleLinkedList<Pixel> convex_hull_list = convex_hull.get();
+      convex_hull_list.gotoFirst();
+//      beginShape();
+//        for (int cvh_idx = 0; cvh_idx < convex_hull_list.size()+1; cvh_idx++, convex_hull_list.gotoNext() ) {
+//          Pixel p = convex_hull_list.getCurrentNode().get();
+//          int k3d_pixel_idx = p.x_ + size_x*p.y_;
+//          KinectPoint3D k3d_point = kinect_3d[k3d_pixel_idx];
+//          if ( blobsable_kinect3d.isBLOBable(k3d_pixel_idx, p.x_, p.y_)) {
+//            float x = k3d_point.x * scale;
+//            float y = k3d_point.y * scale;
+//            vertex(x, y, 0);
+//          }
+//        }
+//      endShape();
+      popMatrix();
+    }
+  }
+
+  // simple information about framerate, and number of detected blobs
+  //    fill(0, 200); noStroke();
+  //    rect(0, 0, 150, 50);
+  //    printlnNumberOfBlobs(blob_detector);
+  //    printlnFPS();
+  
+  if( mm != null){
+    mm.addFrame();  // Add window's pixels to movie
+  }
+  //println(frameRate);
+}
+
+
+
+
+//-------------------------------------------------------------------
+//this is maybe not necessary, but is the proper way to close everything
+public void dispose() {
+  Kinect.shutDown(); 
+  super.dispose();
+}
+
+
+
+
+
+
+
+
+
+
+
