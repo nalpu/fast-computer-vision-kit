@@ -57,4 +57,18 @@ public void drawConvexHull(ConvexHullDiwi convex_hull, int stroke_color, float s
 public void drawConvexHullPoints(ConvexHullDiwi convex_hull, int stroke_color, float stroke_weight) {
   noFill();
   stroke(stroke_color); 
-  strokeWeight(strok
+  strokeWeight(stroke_weight);
+  DoubleLinkedList<Pixel> convex_hull_list = convex_hull.get();
+  convex_hull_list.gotoFirst();
+
+  for (int cvh_idx = 0; cvh_idx < convex_hull_list.size(); cvh_idx++, convex_hull_list.gotoNext() ) {
+    Pixel p = convex_hull_list.getCurrentNode().get();
+    point(p.x_, p.y_);
+  }
+}
+
+
+
+
+// draw boundingsbox
+public void drawBoundingBox(BoundingBox bb, int stroke_color, float stroke_weight) {
