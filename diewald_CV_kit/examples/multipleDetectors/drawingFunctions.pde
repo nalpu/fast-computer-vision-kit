@@ -106,4 +106,9 @@ public void drawPoints(ArrayList<Pixel> pixel_list, int stroke_color, float stro
   stroke(stroke_color);
   strokeWeight(stroke_weight);
 
-  
+  for (int idx = 0; idx < pixel_list.size(); idx++) {
+    Pixel p = pixel_list.get(idx);
+    point(p.x_, p.y_);
+  }
+}
+
