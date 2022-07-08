@@ -42,4 +42,19 @@ public void drawConvexHull(ConvexHullDiwi convex_hull, int stroke_color, float s
   DoubleLinkedList<Pixel> convex_hull_list = convex_hull.get();
   convex_hull_list.gotoFirst();
   beginShape();
-  for (int cvh_idx = 0; cvh_idx < convex_hull_list
+  for (int cvh_idx = 0; cvh_idx < convex_hull_list.size()+1; cvh_idx++, convex_hull_list.gotoNext() ) {
+    Pixel p = convex_hull_list.getCurrentNode().get();
+    vertex(p.x_, p.y_);
+  }
+  endShape();
+}
+
+
+
+
+
+// draw convex-hull-points - only points
+public void drawConvexHullPoints(ConvexHullDiwi convex_hull, int stroke_color, float stroke_weight) {
+  noFill();
+  stroke(stroke_color); 
+  strokeWeight(strok
