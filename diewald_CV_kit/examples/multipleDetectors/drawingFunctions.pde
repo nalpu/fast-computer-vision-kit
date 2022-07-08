@@ -89,4 +89,21 @@ public void drawContour(ArrayList<Pixel> pixel_list, int stroke_color, int fill_
   else
     fill(fill_color);
   stroke(stroke_color);
-  strokeWe
+  strokeWeight(stroke_weight);
+  beginShape();
+  for (int idx = 0; idx < pixel_list.size(); idx++) {
+    Pixel p = pixel_list.get(idx);
+    vertex(p.x_, p.y_);
+  }
+  endShape();
+}
+
+
+
+
+// draw points
+public void drawPoints(ArrayList<Pixel> pixel_list, int stroke_color, float stroke_weight) {
+  stroke(stroke_color);
+  strokeWeight(stroke_weight);
+
+  
