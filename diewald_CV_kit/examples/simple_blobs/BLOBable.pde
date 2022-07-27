@@ -15,4 +15,14 @@ public final class BLOBable_GRADIENT implements BLOBable{
   
   //@Override
   public final void init() {
-    name_ = this.getClass()
+    name_ = this.getClass().getSimpleName(); 
+  }
+  
+  //@Override
+  public final void updateOnFrame( int width, int height) {
+    width_ = width;
+    height_ = height;
+    mousex_val_ = PApplet.map(papplet_.mouseX, 0, papplet_.width,  0, 99);
+    mousey_val_ = PApplet.map(papplet_.mouseY, 0, papplet_.height, 0, 360);
+    if (mousex_val_ > 98 ) mousex_val_ = 98;
+//    Sy
