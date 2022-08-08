@@ -25,4 +25,15 @@ public final class BLOBable_GRADIENT implements BLOBable{
     mousex_val_ = PApplet.map(papplet_.mouseX, 0, papplet_.width,  0, 99);
     mousey_val_ = PApplet.map(papplet_.mouseY, 0, papplet_.height, 0, 360);
     if (mousex_val_ > 98 ) mousex_val_ = 98;
-//    Sy
+//    System.out.println("MY NAME IS: " +this.getClass().getSimpleName());
+  }
+  //@Override
+  public final boolean isBLOBable(int pixel_index, int x, int y) {
+    if (  PixelColor.brighntess(img_.pixels[pixel_index]) < mousex_val_){
+      return true;
+    } else {
+      return false;
+    }
+  }
+}
+
