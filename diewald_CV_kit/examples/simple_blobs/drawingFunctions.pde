@@ -26,4 +26,20 @@ public void printlnFPS() {
 
 public void printlnNumberOfBlobs(BlobDetector blob_detector) {
   fill(100, 200, 255);
-  text("numb
+  text("number of blobs: "+blob_detector.getBlobs().size(), 10, 40);
+}
+
+
+
+
+
+
+// draw convex-hull - as polyline
+public void drawConvexHull(ConvexHullDiwi convex_hull, int stroke_color, float stroke_weight) {
+  noFill();
+  stroke(stroke_color); 
+  strokeWeight(stroke_weight);
+  DoubleLinkedList<Pixel> convex_hull_list = convex_hull.get();
+  convex_hull_list.gotoFirst();
+  beginShape();
+  for (int cvh_i
