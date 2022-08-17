@@ -23,4 +23,18 @@ public final class BLOBable_MARKER implements BLOBable{
     width_ = width;
     height_ = height;
     mousex_val_ = PApplet.map(papplet_.mouseX, 0, papplet_.width,  0, 100);
-    mousey_val_ = PApplet.map(papplet_.mouseY, 0, pa
+    mousey_val_ = PApplet.map(papplet_.mouseY, 0, papplet_.height, 0, 360);
+//    mousey_val_ = 97;
+//    System.out.println("MY NAME IS: " +this.getClass().getSimpleName());
+
+  }
+  
+  
+  //@Override
+  public final boolean isBLOBable(int pixel_index, int x, int y) {
+    
+    hsb_ = PixelColor.rgb2hsb(img_.pixels[pixel_index], hsb_);
+    float hue = hsb_[0];
+    float sat = hsb_[1];
+    float bri = hsb_[2];
+//    i
