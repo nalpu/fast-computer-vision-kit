@@ -37,4 +37,13 @@ public final class BLOBable_MARKER implements BLOBable{
     float hue = hsb_[0];
     float sat = hsb_[1];
     float bri = hsb_[2];
-//    i
+//    if ( x < 10 ) System.out.println(bri);
+    if (  bri < 30){
+      return true;
+    } else {
+      return false;
+    }
+
+  }
+}
+
