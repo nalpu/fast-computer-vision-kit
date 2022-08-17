@@ -10,4 +10,17 @@ public final class BLOBable_MARKER implements BLOBable{
   
   public BLOBable_MARKER(PApplet papplet, PImage img){
     papplet_ = papplet;
-    i
+    img_ = img;
+  }
+  
+  //@Override
+  public final void init() {
+    name_ = this.getClass().getSimpleName(); 
+  }
+  
+  //@Override
+  public final void updateOnFrame( int width, int height) {
+    width_ = width;
+    height_ = height;
+    mousex_val_ = PApplet.map(papplet_.mouseX, 0, papplet_.width,  0, 100);
+    mousey_val_ = PApplet.map(papplet_.mouseY, 0, pa
