@@ -53,3 +53,15 @@ public final class MarkerDomino{
           drawConvexHull(convex_hull, color(0, 255, 0), 1);
         } else {
           if( contour.getPixels().size() > 20){
+            drawContour(contour.getPixels(), color(255, 150,0), color(0, 100), false, 1);
+          }
+        }
+      }
+    }
+    popMatrix();
+  }
+  
+  public final int numberOfDots(){
+    return marker_blob.getBlobs().get(0).getContours().size();
+  }
+}
