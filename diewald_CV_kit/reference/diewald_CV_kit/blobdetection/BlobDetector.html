@@ -325,4 +325,14 @@ public final void <B>setBLOBable</B>(<A HREF="../../diewald_CV_kit/blobdetection
 <A NAME="setResolution(int)"><!-- --></A><H3>
 setResolution</H3>
 <PRE>
-public final void <B>setResolution</B>(int&nbsp;pi
+public final void <B>setResolution</B>(int&nbsp;pixel_jump)</PRE>
+<DL>
+<DD>defines, how many pixels are skipped on each detection. <br>
+ this can be important on a low frame-rate, or if the resolution of the generated blob is not that important.
+ e.g.<br>
+ setResolution(1) - take every pixel for detection
+ setResolution(2) - take every second pixel for detection
+ setResolution(3) - take every third pixel for detection
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><D
