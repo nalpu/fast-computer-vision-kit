@@ -407,4 +407,18 @@ public final <A HREF="../../diewald_CV_kit/blobdetection/Pixel.html" title="clas
 <DL>
 <DD>getPixels() returns an 2-d array of pixels.<br>
  each pixel contains information about its position x/y,
- and the blobs id, it belongs to (call: "pixel".getBlob() )
+ and the blobs id, it belongs to (call: "pixel".getBlob() ).<br>
+ 
+ this array is used internally, to label the pixels accordingly to their neighborhood, defined by the interface BLOBable.<br>
+ on each blob-detection update, each pixel in this array gets a reset.
+<P>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>the labeled pixels</DL>
+</DD>
+</DL>
+<!-- ========= END OF CLASS DATA ========= -->
+<HR>
+
+
+<
