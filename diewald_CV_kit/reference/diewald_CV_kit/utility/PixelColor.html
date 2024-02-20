@@ -732,3 +732,205 @@ public static final int <B>blue</B>(int&nbsp;rgba)</PRE>
 </DL>
 </DD>
 </DL>
+<HR>
+
+<A NAME="rgb2hsb(int, float[])"><!-- --></A><H3>
+rgb2hsb</H3>
+<PRE>
+public static final float[] <B>rgb2hsb</B>(int&nbsp;rgb,
+                                    float[]&nbsp;hsb)</PRE>
+<DL>
+<DD>converts a rgb-value (single integer) value, to an hsb-value.
+ resulting values: hue (0-360), saturation(0-100), brightness(0-100)
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>rgb</CODE> - an red-color
+<DT><B>Returns:</B><DD>the hsb-color as an new array, if no parameter was given(hsb)</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="rgb2hsb(float, float, float, float[])"><!-- --></A><H3>
+rgb2hsb</H3>
+<PRE>
+public static final float[] <B>rgb2hsb</B>(float&nbsp;r,
+                                    float&nbsp;g,
+                                    float&nbsp;b,
+                                    float[]&nbsp;hsb)</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="hue(int)"><!-- --></A><H3>
+hue</H3>
+<PRE>
+public static final float <B>hue</B>(int&nbsp;rgb)</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="hue(float, float, float)"><!-- --></A><H3>
+hue</H3>
+<PRE>
+public static final float <B>hue</B>(float&nbsp;r,
+                              float&nbsp;g,
+                              float&nbsp;b)</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="saturation(int)"><!-- --></A><H3>
+saturation</H3>
+<PRE>
+public static final float <B>saturation</B>(int&nbsp;rgb)</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="saturation(float, float, float)"><!-- --></A><H3>
+saturation</H3>
+<PRE>
+public static final float <B>saturation</B>(float&nbsp;r,
+                                     float&nbsp;g,
+                                     float&nbsp;b)</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="brighntess(int)"><!-- --></A><H3>
+brighntess</H3>
+<PRE>
+public static final float <B>brighntess</B>(int&nbsp;rgb)</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="brighntess(float, float, float)"><!-- --></A><H3>
+brighntess</H3>
+<PRE>
+public static final float <B>brighntess</B>(float&nbsp;r,
+                                     float&nbsp;g,
+                                     float&nbsp;b)</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="hsb2rgb(float, float, float, float[])"><!-- --></A><H3>
+hsb2rgb</H3>
+<PRE>
+public static final float[] <B>hsb2rgb</B>(float&nbsp;h,
+                                    float&nbsp;s,
+                                    float&nbsp;b,
+                                    float[]&nbsp;rgb)</PRE>
+<DL>
+<DD>converts a hsb-value (hue, saturation, brightness) value, to an rgb-value.
+ resulting values: red (0-255), green (0-255), blue (0-255)
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>h</CODE> - hue<DD><CODE>s</CODE> - saturation<DD><CODE>b</CODE> - brightness<DD><CODE>rgb</CODE> - array (size has to be 3), to save the values
+             if rgb == null, a new array will be generated
+             which will slow down execution!!!
+<DT><B>Returns:</B><DD>the rgb-color as an new array, if no parameter was given(rgb)</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="hsb2rgb(float, float, float)"><!-- --></A><H3>
+hsb2rgb</H3>
+<PRE>
+public static final int <B>hsb2rgb</B>(float&nbsp;h,
+                                float&nbsp;s,
+                                float&nbsp;b)</PRE>
+<DL>
+<DD>converts a hsb-value (hue, saturation, brightness) value, to an rgb-value.
+ resulting values: red (0-255), green (0-255), blue (0-255)
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>h</CODE> - hue<DD><CODE>s</CODE> - saturation<DD><CODE>b</CODE> - brightness
+<DT><B>Returns:</B><DD>the rgb-color as an integer</DL>
+</DD>
+</DL>
+<!-- ========= END OF CLASS DATA ========= -->
+<HR>
+
+
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<A NAME="navbar_bottom"><!-- --></A>
+<A HREF="#skip-navbar_bottom" title="Skip navigation links"></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD COLSPAN=2 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<A NAME="navbar_bottom_firstrow"><!-- --></A>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+  <TR ALIGN="center" VALIGN="top">
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Class</B></FONT>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-tree.html"><FONT CLASS="NavBarFont1"><B>Tree</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../index-all.html"><FONT CLASS="NavBarFont1"><B>Index</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT></A>&nbsp;</TD>
+  </TR>
+</TABLE>
+</TD>
+<TD ALIGN="right" VALIGN="top" ROWSPAN=3><EM>
+</EM>
+</TD>
+</TR>
+
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+&nbsp;<A HREF="../../diewald_CV_kit/utility/DoubleLinkedList.Node.html" title="class in diewald_CV_kit.utility"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;<A HREF="../../diewald_CV_kit/utility/Polyline.html" title="class in diewald_CV_kit.utility"><B>NEXT CLASS</B></A></FONT></TD>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+  <A HREF="../../index.html?diewald_CV_kit/utility/PixelColor.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="PixelColor.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+&nbsp;<SCRIPT type="text/javascript">
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="../../allclasses-noframe.html"><B>All Classes</B></A>');
+  }
+  //-->
+</SCRIPT>
+<NOSCRIPT>
+  <A HREF="../../allclasses-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+
+
+</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+</TR>
+</TABLE>
+<A NAME="skip-navbar_bottom"></A>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+
+<HR>
+Processing library diewald_CV_kit by Thomas Diewald. (C) 2012
+</BODY>
+</HTML>
