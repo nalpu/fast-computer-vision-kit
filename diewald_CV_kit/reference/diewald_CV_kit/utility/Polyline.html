@@ -138,3 +138,364 @@ the class Polyline provides some convenient static methods to edit/analyse/etc. 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;returns the surface area of the convex_hull</TD>
 </TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;float</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../diewald_CV_kit/utility/Polyline.html#AREA(java.util.List)">AREA</A></B>(<A HREF="http://java.sun.com/javase/6/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</A>&lt;<A HREF="../../diewald_CV_kit/blobdetection/Pixel.html" title="class in diewald_CV_kit.blobdetection">Pixel</A>&gt;&nbsp;polyline)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;returns the surface area of the polyline</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;float</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../diewald_CV_kit/utility/Polyline.html#AREA(diewald_CV_kit.blobdetection.Pixel[])">AREA</A></B>(<A HREF="../../diewald_CV_kit/blobdetection/Pixel.html" title="class in diewald_CV_kit.blobdetection">Pixel</A>[]&nbsp;polyline)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;returns the surface area of the polyline</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;double</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../diewald_CV_kit/utility/Polyline.html#distance(float, float, float, float)">distance</A></B>(float&nbsp;x1,
+         float&nbsp;y1,
+         float&nbsp;x2,
+         float&nbsp;y2)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;returns the distance between two coordinate pairs</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;double</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../diewald_CV_kit/utility/Polyline.html#distance(diewald_CV_kit.blobdetection.Pixel, diewald_CV_kit.blobdetection.Pixel)">distance</A></B>(<A HREF="../../diewald_CV_kit/blobdetection/Pixel.html" title="class in diewald_CV_kit.blobdetection">Pixel</A>&nbsp;p1,
+         <A HREF="../../diewald_CV_kit/blobdetection/Pixel.html" title="class in diewald_CV_kit.blobdetection">Pixel</A>&nbsp;p2)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;returns the distance between two pixels</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;float</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../diewald_CV_kit/utility/Polyline.html#distancePoint2Line(diewald_CV_kit.blobdetection.Pixel, diewald_CV_kit.blobdetection.Pixel, diewald_CV_kit.blobdetection.Pixel)">distancePoint2Line</A></B>(<A HREF="../../diewald_CV_kit/blobdetection/Pixel.html" title="class in diewald_CV_kit.blobdetection">Pixel</A>&nbsp;p1,
+                   <A HREF="../../diewald_CV_kit/blobdetection/Pixel.html" title="class in diewald_CV_kit.blobdetection">Pixel</A>&nbsp;p2,
+                   <A HREF="../../diewald_CV_kit/blobdetection/Pixel.html" title="class in diewald_CV_kit.blobdetection">Pixel</A>&nbsp;p3)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;returns the shortest distance of a point(p3) to a line (p1-p2)</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;boolean</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../diewald_CV_kit/utility/Polyline.html#INSIDE(diewald_CV_kit.blobdetection.Contour, int, int)">INSIDE</A></B>(<A HREF="../../diewald_CV_kit/blobdetection/Contour.html" title="class in diewald_CV_kit.blobdetection">Contour</A>&nbsp;contour,
+       int&nbsp;x,
+       int&nbsp;y)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;check if a given coordinate pair is inside a contour.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;boolean</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../diewald_CV_kit/utility/Polyline.html#INSIDE(diewald_CV_kit.utility.ConvexHullDiwi, int, int)">INSIDE</A></B>(<A HREF="../../diewald_CV_kit/utility/ConvexHullDiwi.html" title="class in diewald_CV_kit.utility">ConvexHullDiwi</A>&nbsp;convex_hull,
+       int&nbsp;x,
+       int&nbsp;y)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;check if a given coordinate pair is inside a convex_hull.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;boolean</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../diewald_CV_kit/utility/Polyline.html#INSIDE(java.util.List, int, int)">INSIDE</A></B>(<A HREF="http://java.sun.com/javase/6/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</A>&lt;<A HREF="../../diewald_CV_kit/blobdetection/Pixel.html" title="class in diewald_CV_kit.blobdetection">Pixel</A>&gt;&nbsp;polyline,
+       int&nbsp;x,
+       int&nbsp;y)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;check if a given coordinate pair is inside a polyline.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;boolean</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../diewald_CV_kit/utility/Polyline.html#INSIDE(diewald_CV_kit.blobdetection.Pixel[], int, int)">INSIDE</A></B>(<A HREF="../../diewald_CV_kit/blobdetection/Pixel.html" title="class in diewald_CV_kit.blobdetection">Pixel</A>[]&nbsp;polyline,
+       int&nbsp;x,
+       int&nbsp;y)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;check if a given coordinate pair is inside a polyline.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;float</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../diewald_CV_kit/utility/Polyline.html#LENGTH(diewald_CV_kit.blobdetection.Contour)">LENGTH</A></B>(<A HREF="../../diewald_CV_kit/blobdetection/Contour.html" title="class in diewald_CV_kit.blobdetection">Contour</A>&nbsp;contour)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;returns the length of the contour</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;float</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../diewald_CV_kit/utility/Polyline.html#LENGTH(diewald_CV_kit.utility.ConvexHullDiwi)">LENGTH</A></B>(<A HREF="../../diewald_CV_kit/utility/ConvexHullDiwi.html" title="class in diewald_CV_kit.utility">ConvexHullDiwi</A>&nbsp;convex_hull)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;returns the length of the convex_hull</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;float</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../diewald_CV_kit/utility/Polyline.html#LENGTH(java.util.List)">LENGTH</A></B>(<A HREF="http://java.sun.com/javase/6/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</A>&lt;<A HREF="../../diewald_CV_kit/blobdetection/Pixel.html" title="class in diewald_CV_kit.blobdetection">Pixel</A>&gt;&nbsp;polyline)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;returns the length of the polyline</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;float</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../diewald_CV_kit/utility/Polyline.html#LENGTH(diewald_CV_kit.blobdetection.Pixel[])">LENGTH</A></B>(<A HREF="../../diewald_CV_kit/blobdetection/Pixel.html" title="class in diewald_CV_kit.blobdetection">Pixel</A>[]&nbsp;polyline)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;returns the length of the polyline</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="http://java.sun.com/javase/6/docs/api/java/util/ArrayList.html?is-external=true" title="class or interface in java.util">ArrayList</A>&lt;<A HREF="../../diewald_CV_kit/blobdetection/Pixel.html" title="class in diewald_CV_kit.blobdetection">Pixel</A>&gt;</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../diewald_CV_kit/utility/Polyline.html#SIMPLIFY(diewald_CV_kit.blobdetection.Contour, int, float)">SIMPLIFY</A></B>(<A HREF="../../diewald_CV_kit/blobdetection/Contour.html" title="class in diewald_CV_kit.blobdetection">Contour</A>&nbsp;contour,
+         int&nbsp;step,
+         float&nbsp;max_offset)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;returns a new simplified polyline, from a given contour</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="http://java.sun.com/javase/6/docs/api/java/util/ArrayList.html?is-external=true" title="class or interface in java.util">ArrayList</A>&lt;<A HREF="../../diewald_CV_kit/blobdetection/Pixel.html" title="class in diewald_CV_kit.blobdetection">Pixel</A>&gt;</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../diewald_CV_kit/utility/Polyline.html#SIMPLIFY(diewald_CV_kit.utility.ConvexHullDiwi, int, float)">SIMPLIFY</A></B>(<A HREF="../../diewald_CV_kit/utility/ConvexHullDiwi.html" title="class in diewald_CV_kit.utility">ConvexHullDiwi</A>&nbsp;convex_hull,
+         int&nbsp;step,
+         float&nbsp;max_offset)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;returns a new simplified polyline, from a given convex_hull</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="http://java.sun.com/javase/6/docs/api/java/util/ArrayList.html?is-external=true" title="class or interface in java.util">ArrayList</A>&lt;<A HREF="../../diewald_CV_kit/blobdetection/Pixel.html" title="class in diewald_CV_kit.blobdetection">Pixel</A>&gt;</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../diewald_CV_kit/utility/Polyline.html#SIMPLIFY(java.util.List, int, float)">SIMPLIFY</A></B>(<A HREF="http://java.sun.com/javase/6/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</A>&lt;<A HREF="../../diewald_CV_kit/blobdetection/Pixel.html" title="class in diewald_CV_kit.blobdetection">Pixel</A>&gt;&nbsp;polyline,
+         int&nbsp;step,
+         float&nbsp;max_offset)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;returns a new simplified polyline, from a given polyline</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="http://java.sun.com/javase/6/docs/api/java/util/ArrayList.html?is-external=true" title="class or interface in java.util">ArrayList</A>&lt;<A HREF="../../diewald_CV_kit/blobdetection/Pixel.html" title="class in diewald_CV_kit.blobdetection">Pixel</A>&gt;</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../diewald_CV_kit/utility/Polyline.html#SIMPLIFY(diewald_CV_kit.blobdetection.Pixel[], int, float)">SIMPLIFY</A></B>(<A HREF="../../diewald_CV_kit/blobdetection/Pixel.html" title="class in diewald_CV_kit.blobdetection">Pixel</A>[]&nbsp;polyline,
+         int&nbsp;step,
+         float&nbsp;max_offset)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;returns a new simplified polyline, from a given polyline</TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_java.lang.Object"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from class java.lang.<A HREF="http://java.sun.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A></B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><A HREF="http://java.sun.com/javase/6/docs/api/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang">equals</A>, <A HREF="http://java.sun.com/javase/6/docs/api/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang">getClass</A>, <A HREF="http://java.sun.com/javase/6/docs/api/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang">hashCode</A>, <A HREF="http://java.sun.com/javase/6/docs/api/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang">notify</A>, <A HREF="http://java.sun.com/javase/6/docs/api/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang">notifyAll</A>, <A HREF="http://java.sun.com/javase/6/docs/api/java/lang/Object.html?is-external=true#toString()" title="class or interface in java.lang">toString</A>, <A HREF="http://java.sun.com/javase/6/docs/api/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang">wait</A>, <A HREF="http://java.sun.com/javase/6/docs/api/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang">wait</A>, <A HREF="http://java.sun.com/javase/6/docs/api/java/lang/Object.html?is-external=true#wait(long, int)" title="class or interface in java.lang">wait</A></CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<P>
+
+<!-- ============ METHOD DETAIL ========== -->
+
+<A NAME="method_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Method Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="AREA(diewald_CV_kit.blobdetection.Pixel[])"><!-- --></A><H3>
+AREA</H3>
+<PRE>
+public static final float <B>AREA</B>(<A HREF="../../diewald_CV_kit/blobdetection/Pixel.html" title="class in diewald_CV_kit.blobdetection">Pixel</A>[]&nbsp;polyline)</PRE>
+<DL>
+<DD>returns the surface area of the polyline
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>polyline</CODE> - the polyline to get the length from
+<DT><B>Returns:</B><DD>returns the surface area of the polyline</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="AREA(java.util.List)"><!-- --></A><H3>
+AREA</H3>
+<PRE>
+public static final float <B>AREA</B>(<A HREF="http://java.sun.com/javase/6/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</A>&lt;<A HREF="../../diewald_CV_kit/blobdetection/Pixel.html" title="class in diewald_CV_kit.blobdetection">Pixel</A>&gt;&nbsp;polyline)</PRE>
+<DL>
+<DD>returns the surface area of the polyline
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>polyline</CODE> - the polyline to get the length from
+<DT><B>Returns:</B><DD>returns the surface area of the polyline</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="AREA(diewald_CV_kit.blobdetection.Contour)"><!-- --></A><H3>
+AREA</H3>
+<PRE>
+public static final float <B>AREA</B>(<A HREF="../../diewald_CV_kit/blobdetection/Contour.html" title="class in diewald_CV_kit.blobdetection">Contour</A>&nbsp;contour)</PRE>
+<DL>
+<DD>returns the surface area of the contour
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>contour</CODE> - the polyline to get the length from
+<DT><B>Returns:</B><DD>returns the surface area of the contour</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="AREA(diewald_CV_kit.utility.ConvexHullDiwi)"><!-- --></A><H3>
+AREA</H3>
+<PRE>
+public static final float <B>AREA</B>(<A HREF="../../diewald_CV_kit/utility/ConvexHullDiwi.html" title="class in diewald_CV_kit.utility">ConvexHullDiwi</A>&nbsp;convex_hull)</PRE>
+<DL>
+<DD>returns the surface area of the convex_hull
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>convex_hull</CODE> - the polyline to get the length from
+<DT><B>Returns:</B><DD>returns the surface area of the convex_hull</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="LENGTH(diewald_CV_kit.blobdetection.Pixel[])"><!-- --></A><H3>
+LENGTH</H3>
+<PRE>
+public static final float <B>LENGTH</B>(<A HREF="../../diewald_CV_kit/blobdetection/Pixel.html" title="class in diewald_CV_kit.blobdetection">Pixel</A>[]&nbsp;polyline)</PRE>
+<DL>
+<DD>returns the length of the polyline
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>polyline</CODE> - the polyline to get the length from
+<DT><B>Returns:</B><DD>returns the length of the polyline</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="LENGTH(java.util.List)"><!-- --></A><H3>
+LENGTH</H3>
+<PRE>
+public static final float <B>LENGTH</B>(<A HREF="http://java.sun.com/javase/6/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</A>&lt;<A HREF="../../diewald_CV_kit/blobdetection/Pixel.html" title="class in diewald_CV_kit.blobdetection">Pixel</A>&gt;&nbsp;polyline)</PRE>
+<DL>
+<DD>returns the length of the polyline
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>polyline</CODE> - the polyline to get the length from
+<DT><B>Returns:</B><DD>returns the length of the polyline</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="LENGTH(diewald_CV_kit.blobdetection.Contour)"><!-- --></A><H3>
+LENGTH</H3>
+<PRE>
+public static final float <B>LENGTH</B>(<A HREF="../../diewald_CV_kit/blobdetection/Contour.html" title="class in diewald_CV_kit.blobdetection">Contour</A>&nbsp;contour)</PRE>
+<DL>
+<DD>returns the length of the contour
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>contour</CODE> - the polyline to get the length from
+<DT><B>Returns:</B><DD>returns the length of the contour</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="LENGTH(diewald_CV_kit.utility.ConvexHullDiwi)"><!-- --></A><H3>
+LENGTH</H3>
+<PRE>
+public static final float <B>LENGTH</B>(<A HREF="../../diewald_CV_kit/utility/ConvexHullDiwi.html" title="class in diewald_CV_kit.utility">ConvexHullDiwi</A>&nbsp;convex_hull)</PRE>
+<DL>
+<DD>returns the length of the convex_hull
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>convex_hull</CODE> - the polyline to get the length from
+<DT><B>Returns:</B><DD>returns the length of the convex_hull</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="SIMPLIFY(diewald_CV_kit.blobdetection.Contour, int, float)"><!-- --></A><H3>
+SIMPLIFY</H3>
+<PRE>
+public static final <A HREF="http://java.sun.com/javase/6/docs/api/java/util/ArrayList.html?is-external=true" title="class or interface in java.util">ArrayList</A>&lt;<A HREF="../../diewald_CV_kit/blobdetection/Pixel.html" title="class in diewald_CV_kit.blobdetection">Pixel</A>&gt; <B>SIMPLIFY</B>(<A HREF="../../diewald_CV_kit/blobdetection/Contour.html" title="class in diewald_CV_kit.blobdetection">Contour</A>&nbsp;contour,
+                                              int&nbsp;step,
+                                              float&nbsp;max_offset)</PRE>
+<DL>
+<DD>returns a new simplified polyline, from a given contour
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>contour</CODE> - to simplify<DD><CODE>step</CODE> - the number of vertices in a row, that are checked for the maximum offset<DD><CODE>max_offset</CODE> - maximum offset a vertice can have
+<DT><B>Returns:</B><DD>new simplified polygon</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="SIMPLIFY(diewald_CV_kit.utility.ConvexHullDiwi, int, float)"><!-- --></A><H3>
+SIMPLIFY</H3>
+<PRE>
+public static final <A HREF="http://java.sun.com/javase/6/docs/api/java/util/ArrayList.html?is-external=true" title="class or interface in java.util">ArrayList</A>&lt;<A HREF="../../diewald_CV_kit/blobdetection/Pixel.html" title="class in diewald_CV_kit.blobdetection">Pixel</A>&gt; <B>SIMPLIFY</B>(<A HREF="../../diewald_CV_kit/utility/ConvexHullDiwi.html" title="class in diewald_CV_kit.utility">ConvexHullDiwi</A>&nbsp;convex_hull,
+                                              int&nbsp;step,
+                                              float&nbsp;max_offset)</PRE>
+<DL>
+<DD>returns a new simplified polyline, from a given convex_hull
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>convex_hull</CODE> - to simplify<DD><CODE>step</CODE> - the number of vertices in a row, that are checked for the maximum offset<DD><CODE>max_offset</CODE> - maximum offset a vertice can have
+<DT><B>Returns:</B><DD>new simplified polygon</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="SIMPLIFY(java.util.List, int, float)"><!-- --></A><H3>
+SIMPLIFY</H3>
+<PRE>
+public static final <A HREF="http://java.sun.com/javase/6/docs/api/java/util/ArrayList.html?is-external=true" title="class or interface in java.util">ArrayList</A>&lt;<A HREF="../../diewald_CV_kit/blobdetection/Pixel.html" title="class in diewald_CV_kit.blobdetection">Pixel</A>&gt; <B>SIMPLIFY</B>(<A HREF="http://java.sun.com/javase/6/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</A>&lt;<A HREF="../../diewald_CV_kit/blobdetection/Pixel.html" title="class in diewald_CV_kit.blobdetection">Pixel</A>&gt;&nbsp;polyline,
+                                              int&nbsp;step,
+                                              float&nbsp;max_offset)</PRE>
+<DL>
+<DD>returns a new simplified polyline, from a given polyline
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>polyline</CODE> - to simplify<DD><CODE>step</CODE> - the number of vertices in a row, that are checked for the maximum offset<DD><CODE>max_offset</CODE> - maximum offset a vertice can have
+<DT><B>Returns:</B><DD>new simplified polygon</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="SIMPLIFY(diewald_CV_kit.blobdetection.Pixel[], int, float)"><!-- --></A><H3>
+SIMPLIFY</H3>
+<PRE>
+public static final <A HREF="http://java.sun.com/javase/6/docs/api/java/util/ArrayList.html?is-external=true" title="class or interface in java.util">ArrayList</A>&lt;<A HREF="../../diewald_CV_kit/blobdetection/Pixel.html" title="class in diewald_CV_kit.blobdetection">Pixel</A>&gt; <B>SIMPLIFY</B>(<A HREF="../../diewald_CV_kit/blobdetection/Pixel.html" title="class in diewald_CV_kit.blobdetection">Pixel</A>[]&nbsp;polyline,
+                                              int&nbsp;step,
+                                              float&nbsp;max_offset)</PRE>
+<DL>
+<DD>returns a new simplified polyline, from a given polyline
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>polyline</CODE> - to simplify<DD><CODE>step</CODE> - the number of vertices in a row, that are checked for the maximum offset<DD><CODE>max_offset</CODE> - maximum offset a vertice can have
+<DT><B>Returns:</B><DD>new simplified polygon</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="INSIDE(diewald_CV_kit.blobdetection.Pixel[], int, int)"><!-- --></A><H3>
+INSIDE</H3>
+<PRE>
+public static final boolean <B>INSIDE</B>(<A HREF="../../diewald_CV_kit/blobdetection/Pixel.html" title="class in diewald_CV_kit.blobdetection">Pixel</A>[]&nbsp;polyline,
