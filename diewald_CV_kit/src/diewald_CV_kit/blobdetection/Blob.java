@@ -103,3 +103,148 @@ public final class Blob {
   
   
   
+  /**
+   * add another pixelrow to this blob.
+   * 
+   * @param pixelrow the pixelrow to add
+   */
+  protected final void addPixelRow( PixelRow pixelrow ){
+    pixelrows_.add(pixelrow);
+  }
+  
+  /**
+   * generates contours for this blob
+   */
+  protected final void updateContours(){
+    // get outer(first) contour
+    int contour_index = 0;
+    contours_.add( new Contour(this, contour_index++, outer_contour_start_x_, outer_contour_start_y_)); // outer contour
+    
+    // now get possible inner contours
+    for(int i = 0; i < pixelrows_.size(); i++){
+      PixelRow pr = pixelrows_.get(i);
+      if( !blob_detector_.img_pixels_[pr.y_][pr.xs_].border_ ) {
+        contours_.add( new Contour(this, contour_index++, pr.xs_, pr.y_));
+      }
+    }
+  }
+  
+  
+  
+  
+  /**
+   * computes the number of pixels.
+   * AND the coordinates where the outer contour will start
+   */
+  private final void updateNumberOfPixels(){
+    number_of_pixels_ = 0;
+ 
+    // find min x-value of a blob, to get the outer contour first
+    outer_contour_start_x_ = blob_detector_.width_;
+    outer_contour_start_y_ = 0;
+    for(int i = 0; i < pixelrows_.size(); i++){
+      PixelRow pr = pixelrows_.get(i);
+      number_of_pixels_ += pr.xe_ - pr.xs_ + 1; // count number of pixels
+      if( pr.xs_ < outer_contour_start_x_ ){
+        outer_contour_start_x_ = pr.xs_;
+        outer_contour_start_y_ = pr.y_;
+      }
+      if( pr.xs_ == outer_contour_start_x_ && pr.y_ < outer_contour_start_y_){
+        outer_contour_start_x_ = pr.xs_;
+        outer_contour_start_y_ = pr.y_;
+      }
+
+    }
+    number_of_pixels_ *= blob_detector_.pixel_jump_;
+  }
+  
+  /**
+   *  generate an array of pixels, that are part of this blob.
+   */
+  protected final void updatePixels(){
+    pixels_ = new Pixel[number_of_pixels_/blob_detector_.pixel_jump_];
+    int index = 0;
+    for(int i = 0; i < pixelrows_.size(); i++){
+      PixelRow pr = pixelrows_.get(i);
+      for(int x = pr.xs_; x <= pr.xe_; x++)
+        pixels_[index++] = blob_detector_.img_pixels_[pr.y_][x];
+    }
+  }
+  
+
+
+  
+  /**
+   * set this blobs color.
+   * 
+   * @param color the new color of the blob.
+   */
+  public final void setColor(PixelColor color){
+    color_ = color;
+  }
+  
+  /**
+   *  get the blobs current color.
+   *  
+   * @return the current blob-color.
+   */
+  public final PixelColor getColor(){
+    return color_;
+  }
+  
+  /**
+   * get all the pixelrows of this blob.
+   * usually there's no need for this.
+   * 
+   * @return a list of all the pixelrows
+   */
+  public final ArrayList<PixelRow> getPixelRows(){
+    return pixelrows_;
+  }
+  
+  /**
+   * give the blob a new ID. 
+   *  
+   * @param ID the new id.
+   */
+  public final void setID(int ID){
+    ID_ = ID;
+  }
+  /**
+   * returns the id of the blob.
+   * @return the id of the blob.
+   */
+  public final int getID(){
+    return ID_;
+  }
+  
+  /**
+   * returns a list of all contours of this blob.<br>
+   * there's only ONE outer contour, and there can be endless inner contours.<br>
+   * the outer contour has a clockwise rotation. All the inner ones have a counter-clockwise rotation.<br>
+   * 
+   * 
+   * @return list of contours.
+   */
+  public final ArrayList<Contour> getContours(){
+    return contours_;
+  }
+  /**
+   * get the total number of pixels of this blob. which is also the area-size of the blob.
+   * @return number of pixels
+   */
+  public final int getNumberOfPixels(){
+    return number_of_pixels_;
+  }
+  
+  /**
+   * get the list of blob-pixels.
+   * @return list of blob-pixels
+   */
+  public final Pixel[] getPixels(){
+    return pixels_;
+  }
+  
+
+}
+
