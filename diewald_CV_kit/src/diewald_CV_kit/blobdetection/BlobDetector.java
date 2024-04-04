@@ -214,3 +214,160 @@ public final class BlobDetector {
     for(int i = 0; i < blobs_.size(); i++ ){
       if( compute_blob_contours_ ) blobs_.get(i).updateContours();
       if( compute_blob_pixels_   ) blobs_.get(i).updatePixels();
+    }
+    
+//    System.out.println("time to calculate:   "+ (System.currentTimeMillis()-time) + " ms");
+//    System.out.println("number of blobs:   "+ blobs_.size());
+//    System.out.println("------------------------------------------------------");
+    return true;
+  }
+
+  
+  
+  /**
+   * set a bounding-box to define the detection-area (by reference).<br>
+   * note: the bounds are not checked, so make sure, they are within the image-bounds.
+   * @param bb bounding-box.
+   */
+  public final void setDetectingArea(BoundingBox bb){   
+    bb_blob_detecting_area_ = bb;
+  }
+  
+  /**
+   * returns the boundingsbox, which defines the detection-area (by reference).<br>
+   * @return the boundingsbox, which defines the detection-area.
+   */
+  public final BoundingBox getDetectingArea(){
+    return bb_blob_detecting_area_;
+  }
+  
+  
+  
+  
+  /**
+   *  set the condition (BLOBable) that defines, which pixels are part of a blob.
+   *  this condition gets called for every pixels.
+   * 
+   * @param blobable the condition
+   */
+  public final void setBLOBable(BLOBable blobable){
+    if( blobable == null )
+      return;
+    blobable_active_ = blobable;
+    blobable_active_.init();
+//    System.out.println("diewald_cv: BLOBable: "+ blobable.getClass().getSimpleName());
+  }
+  
+  /**
+   * defines, how many pixels are skipped on each detection. <br>
+   * this can be important on a low frame-rate, or if the resolution of the generated blob is not that important.
+   * e.g.<br>
+   * setResolution(1) - take every pixel for detection
+   * setResolution(2) - take every second pixel for detection
+   * setResolution(3) - take every third pixel for detection
+   * 
+   * @param pixel_jump
+   */
+  public final void setResolution(int pixel_jump){
+    pixel_jump_ = (pixel_jump < 1) ? 1 : pixel_jump;
+  }
+  
+
+  /**
+   * define the minimum/maximum number of pixels a blob can have.<br>
+   * only blobs with a number of pixels within this range, are detected.
+   * 
+   * 
+   * @param min_blob_pixels minimum number of pixels
+   * @param max_blob_pixels maximum number of pixels
+   */
+  public final void setMinMaxPixels(int min_blob_pixels, int max_blob_pixels){
+    min_blob_pixels_ = min_blob_pixels;
+    max_blob_pixels_ = max_blob_pixels;
+  }
+  
+  /**
+   * defines, whether the the contours (outer and inner ones) of each blob are generated.<br>
+   * if you dont need contours, call computeContours(false);<br>
+   * the default setting is: computeContours(true);
+   * @param compute_contours
+   */
+  public final void computeContours( boolean compute_contours){
+    compute_blob_contours_ = compute_contours;
+  }
+  
+  /**
+   * if computeBlobPixels(true) is called, the library generates a new pixelarray
+   * for each detected blob, after each update.<br>
+   * if you don't need this blobs pixel-array, you can save a lot of computation-time, by calling
+   * computeBlobPixels(false), which is the default setting!
+   * 
+   * @param compute_blob_pixels 
+   */
+  public final void computeBlobPixels( boolean compute_blob_pixels){
+    compute_blob_pixels_ = compute_blob_pixels;
+  }
+
+ 
+  /**
+   * getBlobs() returns the detected blobs after each update().
+   * 
+   * @return the detected blobs 
+   */
+  public final ArrayList<Blob> getBlobs(){
+    return blobs_;
+  }
+  
+  /**
+   * getPixels() returns an 2-d array of pixels.<br>
+   * each pixel contains information about its position x/y,
+   * and the blobs id, it belongs to (call: "pixel".getBlob() ).<br>
+   * 
+   * this array is used internally, to label the pixels accordingly to their neighborhood, defined by the interface BLOBable.<br>
+   * on each blob-detection update, each pixel in this array gets a reset.
+   * 
+   * @return the labeled pixels
+   */
+  public final Pixel[][] getPixels(){
+    return img_pixels_;
+  }
+  
+}
+
+
+
+
+
+
+
+
+
+final class BLOBable_DEFAULT implements BLOBable{
+  int width_, height_;
+  String name;
+
+  @Override
+  public final boolean isBLOBable(int index, int x, int y) {
+    return false;
+  }
+  
+  @Override
+  public final void updateOnFrame( int width, int height) {
+    width_ = width;
+    height_ = height;
+    System.out.println("default");
+  }
+  
+  @Override
+  public final void init() {
+    name = this.getClass().getSimpleName(); 
+    System.out.println("default = "+name);
+  }
+}
+
+
+
+
+
+
+
