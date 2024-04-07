@@ -28,4 +28,16 @@
  * This code is distributed in the hope that it will be useful, but
  * WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
- * General P
+ * General Public License for more details.
+ * 
+ * A copy of the GNU General Public License is available on the World
+ * Wide Web at <http://www.gnu.org/copyleft/gpl.html>. You can also
+ * obtain it by writing to the Free Software Foundation,
+ * Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+ */
+
+
+
+package diewald_CV_kit.blobdetection;
+
+import java.ut
