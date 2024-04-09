@@ -40,4 +40,18 @@
 
 package diewald_CV_kit.blobdetection;
 
-import java.ut
+import java.util.ArrayList;
+
+import diewald_CV_kit.utility.BoundingBox;
+
+
+
+/**
+ * the class Contour calculates a closed polyline of a blob.<br>
+ * a blob can have only ONE outer contour, and endless inner contours.<br>
+ * for example the letter "B" as an image, would have one outer contour, and two inner contours.<br>
+ * 
+ * @author thomas diewald (c) 2011
+ *
+ */
+public fina
