@@ -54,4 +54,17 @@ import diewald_CV_kit.utility.BoundingBox;
  * @author thomas diewald (c) 2011
  *
  */
-public fina
+public final class Contour {
+  
+  private final Blob parent_blob_;
+  private final int ID_;
+  
+  private final ArrayList<Pixel> pixels_ = new ArrayList<Pixel>();
+  private final BoundingBox boundingbox_;
+  
+
+  protected final boolean clock_wise_; // only the outer contour goes in clockwise direction --> important for the convex hull;
+
+  /**
+   * 
+   * @param parent_blob 
