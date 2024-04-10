@@ -72,4 +72,17 @@ public final class Contour {
    * @param x_pos_start  start of the contour - x-position
    * @param y_pos_start  start of the contour - y-position
    */
-  protected Contour(Blob parent_blob, int ID, int x_pos_start, int y_p
+  protected Contour(Blob parent_blob, int ID, int x_pos_start, int y_pos_start){
+    parent_blob_ = parent_blob;
+    boundingbox_   = new BoundingBox();
+    generate(parent_blob_.blob_detector_.img_pixels_, x_pos_start, y_pos_start);
+    updateBoundingBox();
+    ID_ = ID;
+    
+    clock_wise_ = (ID == 0 );
+    
+
+  }
+  /**
+   *----------------------------------------------------------------------------
+   * m
