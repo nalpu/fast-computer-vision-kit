@@ -67,4 +67,9 @@ public final class Contour {
 
   /**
    * 
-   * @param parent_blob 
+   * @param parent_blob  the parent blob, this contour is part of
+   * @param ID           the id of the contour. also used for checking the direction (clockwise or counter-clockwise).
+   * @param x_pos_start  start of the contour - x-position
+   * @param y_pos_start  start of the contour - y-position
+   */
+  protected Contour(Blob parent_blob, int ID, int x_pos_start, int y_p
