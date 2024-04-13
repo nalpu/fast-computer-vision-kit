@@ -95,4 +95,12 @@ public final class Contour {
    * @param pixel_list the array of pixels, with the blob IDs.
    * @param x_pos  start of the contour - x-position
    * @param y_pos  start of the contour - y-position
-   * @return tru
+   * @return true on success
+   */
+  private final boolean generate(Pixel pixel_list[][], int x_pos, int y_pos){
+    
+    // just search for a contour, within the detection-area
+    BoundingBox detection_area = parent_blob_.blob_detector_.getDetectingArea();
+    int x_min = detection_area.xMin();
+    int y_min = detection_area.yMin();
+    int x_max
