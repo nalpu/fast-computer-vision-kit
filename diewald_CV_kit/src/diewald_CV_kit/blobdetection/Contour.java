@@ -85,4 +85,14 @@ public final class Contour {
   }
   /**
    *----------------------------------------------------------------------------
-   * m
+   * my algorithm uses the "4 - neighborhood only"
+   *--------------------------
+   *   0  
+   * 3 + 1 
+   *   2  
+   *-------------------------- 
+   * 
+   * @param pixel_list the array of pixels, with the blob IDs.
+   * @param x_pos  start of the contour - x-position
+   * @param y_pos  start of the contour - y-position
+   * @return tru
