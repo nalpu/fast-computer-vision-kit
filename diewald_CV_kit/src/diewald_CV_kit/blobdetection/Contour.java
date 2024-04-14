@@ -103,4 +103,17 @@ public final class Contour {
     BoundingBox detection_area = parent_blob_.blob_detector_.getDetectingArea();
     int x_min = detection_area.xMin();
     int y_min = detection_area.yMin();
-    int x_max
+    int x_max = detection_area.xMax();
+    int y_max = detection_area.yMax();
+    
+
+    int search_count = 0;
+
+    int x_pos_next = 0, y_pos_next = 0;
+    int neighbor = 0;
+    int pj = parent_blob_.blob_detector_.pixel_jump_;
+ 
+    int index_step[][] = { { 0, -pj}, {+pj,  0}, { 0, +pj}, {-pj,  0} }; // vector
+  
+    Pixel current_pixel = null;
+    
