@@ -116,4 +116,16 @@ public final class Contour {
     int index_step[][] = { { 0, -pj}, {+pj,  0}, { 0, +pj}, {-pj,  0} }; // vector
   
     Pixel current_pixel = null;
+    Pixel pixel_start = pixel_list[y_pos][x_pos];
+    if( pixel_start.getBlob() != parent_blob_ || !detection_area.inside(pixel_start) )
+      return false; // in case the startpixel makes no sense, or is outside of the detection-area!!!!
+
+    pixels_.clear();
+    pixels_.add( pixel_start );
+    pixel_start.border_ = true;
+
+    int pixel_after_start_counter = 0;
+
+  
     
+    while(
