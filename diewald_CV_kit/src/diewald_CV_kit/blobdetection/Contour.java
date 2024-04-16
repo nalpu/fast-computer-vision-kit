@@ -128,4 +128,13 @@ public final class Contour {
 
   
     
-    while(
+    while(search_count++ < 4){ 
+      x_pos_next = x_pos + index_step[neighbor][0];
+      y_pos_next = y_pos + index_step[neighbor][1];
+      
+      
+      if( x_pos_next >= x_min && x_pos_next < x_max && 
+          y_pos_next >= y_min && y_pos_next < y_max)
+      {
+        current_pixel = pixel_list[y_pos_next][x_pos_next];
+        if( current_pixel.getBlob() =
