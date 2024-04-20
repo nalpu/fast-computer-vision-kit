@@ -145,4 +145,17 @@ public final class Contour {
           // check if the contour finder already found the first and second pixel of the contour twice
           // this means, it would start all over, --> endless loop
           if( pixels_.size() >= 2 && 
-              pixels_.get(pixels_.si
+              pixels_.get(pixels_.size()-2) == pixel_start && 
+              pixels_.get(1) == current_pixel &&
+              pixel_after_start_counter++ > 0)
+          {
+            pixels_.remove(pixels_.size()-1); // remove the last pixel added
+            break;
+          }
+
+          x_pos = x_pos_next;
+          y_pos = y_pos_next;
+          search_count = 0;
+          neighbor += 2;
+        }
+   
