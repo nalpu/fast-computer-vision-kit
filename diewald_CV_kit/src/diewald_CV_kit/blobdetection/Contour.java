@@ -137,4 +137,12 @@ public final class Contour {
           y_pos_next >= y_min && y_pos_next < y_max)
       {
         current_pixel = pixel_list[y_pos_next][x_pos_next];
-        if( current_pixel.getBlob() =
+        if( current_pixel.getBlob() == parent_blob_ ){
+ 
+          pixels_.add(current_pixel);
+          current_pixel.border_ = true;
+          
+          // check if the contour finder already found the first and second pixel of the contour twice
+          // this means, it would start all over, --> endless loop
+          if( pixels_.size() >= 2 && 
+              pixels_.get(pixels_.si
