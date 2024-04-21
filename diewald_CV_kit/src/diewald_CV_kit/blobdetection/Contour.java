@@ -158,4 +158,22 @@ public final class Contour {
           search_count = 0;
           neighbor += 2;
         }
-   
+      } 
+      neighbor++;
+      neighbor %= 4;
+    } 
+     
+    return true;
+  }
+  
+  
+  /**
+   * update the bounding-box for the contour.
+   */
+  private final void updateBoundingBox(){
+    int x_min, x_max, y_min, y_max;
+    x_min = x_max = pixels_.get(0).x_;
+    y_min = y_max = pixels_.get(0).y_;
+    for(int i = 0; i < pixels_.size(); i++){
+      Pixel p = pixels_.get(i);
+      if( p.x_ < x_min ) x_m
