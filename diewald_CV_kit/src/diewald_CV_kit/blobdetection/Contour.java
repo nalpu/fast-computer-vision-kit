@@ -176,4 +176,17 @@ public final class Contour {
     y_min = y_max = pixels_.get(0).y_;
     for(int i = 0; i < pixels_.size(); i++){
       Pixel p = pixels_.get(i);
-      if( p.x_ < x_min ) x_m
+      if( p.x_ < x_min ) x_min = p.x_;
+      if( p.x_ > x_max ) x_max = p.x_;
+      if( p.y_ < y_min ) y_min = p.y_;
+      if( p.y_ > y_max ) y_max = p.y_;
+    }
+    boundingbox_.set(x_min, y_min, x_max, y_max);
+  }
+  
+  /**
+   * returns a list of contour-pixels.
+   * @return a list of contour-pixels.
+   */
+  public final ArrayList<Pixel> getPixels(){
+    return p
