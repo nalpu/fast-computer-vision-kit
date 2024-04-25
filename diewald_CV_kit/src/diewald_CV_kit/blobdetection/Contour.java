@@ -189,4 +189,17 @@ public final class Contour {
    * @return a list of contour-pixels.
    */
   public final ArrayList<Pixel> getPixels(){
-    return p
+    return pixels_;
+  }
+  /**
+   * returns the bounding-box of the contour.
+   * @return the bounding-box of the contour.
+   */
+  public final BoundingBox getBoundingBox(){
+    return boundingbox_;
+  }
+  /**
+   * returns true if the contour has clockwise-rotation.
+   * @return true if the contour has clockwise-rotation.
+   */
+  public 
