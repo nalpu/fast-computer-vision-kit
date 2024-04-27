@@ -202,4 +202,16 @@ public final class Contour {
    * returns true if the contour has clockwise-rotation.
    * @return true if the contour has clockwise-rotation.
    */
-  public 
+  public final boolean clockWise(){
+    return clock_wise_;
+  }
+  /**
+   * returns the ID of the contour.
+   * @return the ID of the contour.
+   */
+  public final int ID(){
+    return ID_;
+  }
+  
+}
+
