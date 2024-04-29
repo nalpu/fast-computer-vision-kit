@@ -30,4 +30,17 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
  * General Public License for more details.
  * 
- * A copy of the GNU General 
+ * A copy of the GNU General Public License is available on the World
+ * Wide Web at <http://www.gnu.org/copyleft/gpl.html>. You can also
+ * obtain it by writing to the Free Software Foundation,
+ * Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+ */
+
+
+
+package diewald_CV_kit.libraryinfo;
+/**
+ * 
+ * some information about the library
+ * 
+ * @author thomas diewald (c) 2
