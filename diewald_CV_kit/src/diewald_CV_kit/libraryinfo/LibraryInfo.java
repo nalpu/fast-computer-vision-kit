@@ -43,4 +43,19 @@ package diewald_CV_kit.libraryinfo;
  * 
  * some information about the library
  * 
- * @author thomas diewald (c) 2
+ * @author thomas diewald (c) 2011
+ *
+ */
+public final class LibraryInfo {
+  
+  private static final String DATE_    = "dec 2012";
+  private static final String AUTHOR_  = "thomas diewald";
+  private static final String NAME_    = "diewald_CV_kit";
+  private static final String VERSION_ = "v1.10";
+  
+  private LibraryInfo(){
+  }
+  
+  
+  static{
+    System.out.println("\nprocessing li
