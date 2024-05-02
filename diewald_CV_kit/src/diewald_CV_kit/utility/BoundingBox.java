@@ -1,3 +1,4 @@
+
 /**
  * 
  * diewald_CV_kit v1.1
@@ -38,41 +39,42 @@
 
 
 
-package diewald_CV_kit.libraryinfo;
+package diewald_CV_kit.utility;
+
+import diewald_CV_kit.blobdetection.Pixel;
+
+
 /**
- * 
- * some information about the library
- * 
+ *
+ *
  * @author thomas diewald (c) 2011
  *
  */
-public final class LibraryInfo {
+public final class BoundingBox {
+  private float center_x_, center_y_;
+  private int x_min_, x_max_, y_min_, y_max_;
+  private int size_x_, size_y_;
   
-  private static final String DATE_    = "dec 2012";
-  private static final String AUTHOR_  = "thomas diewald";
-  private static final String NAME_    = "diewald_CV_kit";
-  private static final String VERSION_ = "v1.10";
-  
-  private LibraryInfo(){
+  /**
+   * generate a new bounding-box.
+   */
+  public BoundingBox(){
+  }
+  /**
+   * 
+   * generate a new bounding-box, and define its bounds.
+   * @param x_min minimum x-pos of the bounding-box.
+   * @param y_min minimum y-pos of the bounding-box.
+   * @param x_max maximum x-pos of the bounding-box.
+   * @param y_max maximum y-pos of the bounding-box.
+   */
+  public BoundingBox(int x_min, int y_min, int x_max, int y_max){
+    set(x_min, y_min, x_max, y_max);
   }
   
-  
-  static{
-    System.out.println("\nprocessing library: "+NAME_ +" - "+ VERSION_+"\n");
-  }
-
-  public static final String date(){
-    return DATE_;
-  }
-  public static final String author(){
-    return AUTHOR_;
-  }
-  public static final String name(){
-    return NAME_;
-  }
-  public static final String version(){
-    return VERSION_;
-  }
-
-  
-}
+  /**
+   * 
+   * set the bounds of the bounding-box.
+   * @param x_min minimum x-pos of the bounding-box.
+   * @param y_min minimum y-pos of the bounding-box.
+   * @param x_max maximum x-pos of the bounding-box.
