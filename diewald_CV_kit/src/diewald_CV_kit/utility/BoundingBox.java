@@ -78,3 +78,45 @@ public final class BoundingBox {
    * @param x_min minimum x-pos of the bounding-box.
    * @param y_min minimum y-pos of the bounding-box.
    * @param x_max maximum x-pos of the bounding-box.
+   * @param y_max maximum y-pos of the bounding-box.
+   */
+  public final void set(int x_min, int y_min, int x_max, int y_max){
+    x_min_ = x_min;
+    x_max_ = x_max;
+    y_min_ = y_min;
+    y_max_ = y_max;
+    size_x_ = x_max_ - x_min_;
+    size_y_ = y_max_ - y_min_;
+    center_x_ = x_min_ + size_x_ * 0.5f;
+    center_y_ = y_min_ + size_y_ * 0.5f;
+  }
+  
+  /**
+   * check if the given coordinate is inside the bounding-box.
+   * @param x x-coordinate.
+   * @param y y-coordinate.
+   * @return true, if the coordinate is inside the bounding-box.
+   */
+  public final boolean inside(int x, int y){
+    return x >= x_min_ && x < x_max_ && y >= y_min_ && y < y_max_;
+  }
+  
+  /**
+   * check if the given pixel is inside the bounding-box
+   * @param p the pixel to check for.
+   * @return true, if the pixel is inside the bounding-box
+   */
+  public final boolean inside(Pixel p){
+    return p.x_ >= x_min_ && p.x_ < x_max_ && p.y_ >= y_min_ && p.y_ < y_max_;
+  }
+  
+  public final int xMin(){ return x_min_; }
+  public final int yMin(){ return y_min_; }
+  public final int xMax(){ return x_max_; }
+  public final int yMax(){ return y_max_; }
+  public final int xSize(){ return size_x_; }
+  public final int ySize(){ return size_y_; }
+  public final float xCenter(){ return center_x_; }
+  public final float yCenter(){ return center_y_; }
+  
+}
