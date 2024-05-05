@@ -172,3 +172,207 @@ public final class PixelColor {
   /** 
    * converts a rgb-value (red, green, blue) value, to an hsb-value.
    * resulting values: hue (0-360), saturation(0-100), brightness(0-100)
+   * 
+   * @param r    red
+   * @param g    green
+   * @param b    blue
+   * @param hsb  array (size has to be 3), to save the values
+   *             if hsb == null, a new array will be generated
+   *             which will slow down execution!!!
+   *             
+   * @return the hsb-color as an new array, if no parameter was given(hsb)
+   * 
+   */
+  private final static float factor_s_b_ = 100/255f; // to map brighntess between 0 ... 100
+  public static final float[] rgb2hsb(float r, float g, float b, float hsb[]){
+    if( hsb == null )
+      hsb = new float[3]; // fastest, if its defined outside of the function!
+    // find min / max
+    float MAX = r, MIN = g;
+    if( r < g ){MIN = r; MAX = g;}
+    if( b > MAX ) MAX = b;
+    if( b < MIN ) MIN = b;
+    
+//    float factor_s_b_ = 100/255f; // to map brighntess between 0 ... 100
+
+    if( MAX == MIN ){ // color is gray
+      hsb[0] = 0;
+      hsb[1] = 0;
+      hsb[2] = MAX * factor_s_b_;
+      return hsb;
+    } else { 
+      float hue_tmp = 0;
+      
+      float factor_h_ = 60f/(MAX-MIN);
+      if     ( MAX == r ) hue_tmp = factor_h_ * (g-b) ;
+      else if( MAX == g ) hue_tmp = factor_h_ * (b-r) + 120f;
+      else if( MAX == b ) hue_tmp = factor_h_ * (r-g) + 240f;
+
+      if( hue_tmp <  0 )  hue_tmp += 360f;
+
+      hsb[0] = hue_tmp;
+      hsb[1] = 100*(MAX-MIN)/MAX;
+      hsb[2] = MAX * factor_s_b_;
+
+      return hsb;
+    }
+  } 
+  
+  
+
+  public static final float hue(int rgb){
+    return hue((rgb>>16)&0xFF, (rgb>>8)&0xFF, rgb&0xFF);
+  } 
+  
+  public static final float hue(float r, float g, float b){
+    float MAX = r, MIN = g;
+    if( r < g ){MIN = r; MAX = g;}
+    if( b > MAX ) MAX = b;
+    if( b < MIN ) MIN = b;
+   
+    if( MAX == MIN ) return 0;
+    float h_ = 0;
+    h_ = 0;
+    float factor_h_ = 60f/(MAX-MIN);
+    if     ( MAX == r ) h_ = factor_h_ * (g-b) ;
+    else if( MAX == g ) h_ = factor_h_ * (b-r) + 120f;
+    else if( MAX == b ) h_ = factor_h_ * (r-g) + 240f;
+    if( h_ <  0 )  h_ += 360f;
+    return h_;
+  } 
+  
+  
+  
+  public static final float saturation(int rgb){
+    return saturation((rgb>>16)&0xFF, (rgb>>8)&0xFF, rgb&0xFF);
+  } 
+  
+  public static final float saturation(float r, float g, float b){
+    float MAX = r, MIN = g;
+    if( r < g ){MIN = r; MAX = g;}
+    if( b > MAX ) MAX = b;
+    if( b < MIN ) MIN = b;
+    if( MAX == MIN ) return 0;
+    return 100*(MAX-MIN)/MAX;
+  } 
+  
+  
+  
+  public static final float brighntess(int rgb){
+    return brighntess((rgb>>16)&0xFF, (rgb>>8)&0xFF, rgb&0xFF);
+  } 
+  
+
+  public static final float brighntess(float r, float g, float b){
+    float MAX = r; 
+    if( MAX < g ) MAX = g;
+    if( MAX < b ) MAX = b;
+    return MAX * factor_s_b_;
+  } 
+  
+
+  
+  
+  
+  /** 
+   * converts a hsb-value (hue, saturation, brightness) value, to an rgb-value.
+   * resulting values: red (0-255), green (0-255), blue (0-255)
+   * 
+   * @param h    hue
+   * @param s    saturation
+   * @param b    brightness
+   * @param rgb  array (size has to be 3), to save the values
+   *             if rgb == null, a new array will be generated
+   *             which will slow down execution!!!
+   *             
+   * @return the rgb-color as an new array, if no parameter was given(rgb)
+   */
+  public static final float[] hsb2rgb(float h, float s, float b, float rgb[]){
+    if( rgb == null )
+      rgb = new float[3];
+     
+    float hi = h *   .0166666666666666f; // -->      h/ 60f, but MUCH faster
+    float S  = s *   .01f;               // -->      s/100f, but MUCH faster
+    float V  = b * 2.55f;                // -->  255*b/100f, but MUCH faster
+    
+    int hi_int = (int)hi;
+    float f = hi - hi_int;
+    
+    float p = V * ( 1 - S );
+    float q = V * ( 1 - S * f);
+    float t = V * ( 1 - S * ( 1 - f ) );
+    
+    switch ( hi_int){
+      case 0: rgb[0] = V; rgb[1] = t; rgb[2] = p; break;
+      case 1: rgb[0] = q; rgb[1] = V; rgb[2] = p; break;
+      case 2: rgb[0] = p; rgb[1] = V; rgb[2] = t; break;
+      case 3: rgb[0] = p; rgb[1] = q; rgb[2] = V; break;
+      case 4: rgb[0] = t; rgb[1] = p; rgb[2] = V; break;
+      case 5: rgb[0] = V; rgb[1] = p; rgb[2] = q; break;
+      case 6: rgb[0] = V; rgb[1] = t; rgb[2] = p; break;
+    }
+
+    return rgb;
+  } 
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  /** 
+   * converts a hsb-value (hue, saturation, brightness) value, to an rgb-value.
+   * resulting values: red (0-255), green (0-255), blue (0-255)
+   * 
+   * @param h    hue
+   * @param s    saturation
+   * @param b    brightness
+   * 
+   * @return the rgb-color as an integer
+   */
+  public static final int hsb2rgb(float h, float s, float b){
+
+    float hi = h *   .0166666666666666f; // -->      h/ 60f, but MUCH faster
+    float S  = s *   .01f;               // -->      s/100f, but MUCH faster
+    float V  = b * 2.55f;                // -->  255*b/100f, but MUCH faster
+    
+    int hi_int = (int)hi;
+    float f = hi - hi_int;
+    
+    float p = V * ( 1 - S );
+    float q = V * ( 1 - S * f);
+    float t = V * ( 1 - S * ( 1 - f ) );
+    
+    float r_ = 0, g_ = 0, b_ = 0;
+    
+    switch ( hi_int){
+      case 0: r_ = V; g_ = t; b_ = p; break;
+      case 1: r_ = q; g_ = V; b_ = p; break;
+      case 2: r_ = p; g_ = V; b_ = t; break;
+      case 3: r_ = p; g_ = q; b_ = V; break;
+      case 4: r_ = t; g_ = p; b_ = V; break;
+      case 5: r_ = V; g_ = p; b_ = q; break;
+      case 6: r_ = V; g_ = t; b_ = p; break;
+    }
+
+    return 0xFF000000 | ((int)r_ << 16) | ((int)g_ << 8)| ((int)b_ << 0);
+  } 
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+ 
+}
