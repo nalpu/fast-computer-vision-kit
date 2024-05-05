@@ -1,0 +1,71 @@
+
+-----------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------
+AUTHOR: User nalpu
+Date: 06.09.2011
+-----------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+###########################################################
+-----------------------------------------------------------------------------------------------------------------------------
+PROCESSING - computer vision library - fast-computer-vision-kit
+-----------------------------------------------------------------------------------------------------------------------------
+###########################################################
+
+project page: http://thomasdiewald.com/blog/?p=1107
+
+this library contains tools that are used in the field of computer vision.
+its not a wrapper of openCV or some other libraries , so maybe you are missing 
+some features ( ... which may be implemented in the future).
+
+its designed to be very fast to use it for realtime applications (webcam-tracking, kinect-tracking, ...).
+ent.
+
+the examples, that come with the library, demonstrates:
+kinect 3D/2D tracking
+a simple marker tracking
+image-blob tracking
+
+
+
+
+-----------------------------------------------------------------------------------------------------------------------------
+online example: 
+http://www.openprocessing.org/visuals/?visualID=35858
+http://www.openprocessing.org/visuals/?visualID=35859
+
+videos:
+http://thomasdiewald.com/blog/?p=1107
+-----------------------------------------------------------------------------------------------------------------------------
+ZIP_CONTENT:
+1) processing examples
+2) reference
+3) source-code
+4) library: fast-computer-vision-kit.jar
+
+
+
+-----------------------------------------------------------------------------------------------------------------------------
+FEATURES:
+
+- connected component labeling - blobdetection
+- contours:
+  continuous polyline
+  a blob has only one outer contours, and can have endless inner contours
+  the outer contour always goes in clockwise-direction, the inner ones go counter-clockwise
+
+- convex hull
+- double-linked-list (used for the covex hull for quick node adding/removing)
+- polyline tools (simplification, areasize, length, etc.
+- color class for fast generating/extracting of color components
+
+
+
+
+
+
+-----------------------------------------------------------------------------------------------------------------------------
+USEFUL LINKS TO THIS TOPIC:
